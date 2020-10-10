@@ -1,15 +1,27 @@
 {
     "name": "@kylemit/eleventy-blog",
     "version": "1.0.0",
-    "description": "",
+    "description": "Zero Config Blog Eleventy Blogging Engine",
     "bin": {
-        "eleventy-blog": "cmd.js"
+        "eleventy-blog": "./cmd.js"
     },
     "scripts": {},
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "@11ty/eleventy": "^0.11.0"
-    }
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/KyleMit/eleventy-blog.git"
+    },
+    "keywords": [
+        "eleventy",
+        "static-site-generator",
+        "static-site",
+        "ssg",
+        "blog",
+        "website"
+    ],
+    "author": "KyleMit",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/KyleMit/eleventy-blog/issues"
+    },
+    "homepage": "https://github.com/KyleMit/eleventy-blog#readme"
 }
