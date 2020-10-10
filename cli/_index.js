@@ -60,7 +60,7 @@ async function main() {
 
 
         // run eleventy in bin dir
-        await cmd(`eleventy ${process.argv.slice(2).join(" ")}`);
+        await cmd(`npx @11ty/eleventy ${process.argv.slice(2).join(" ")}`);
 
 
         // move _site from binDir to curDir

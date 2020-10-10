@@ -1,14 +1,14 @@
 {
-    "name": "eleventy-blog",
-    "version": "1.0.0",
+    "name": "create-eleventy-blog",
+    "version": "0.1.0",
     "description": "Low Code Eleventy Blog Builder",
     "bin": {
-        "eleventy-blog": "./cmd.js"
+        "create-eleventy-blog": "./cmd.js"
     },
     "scripts": {},
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/KyleMit/eleventy-blog.git"
+        "url": "git+https://github.com/KyleMit/create-eleventy-blog.git"
     },
     "keywords": [
         "eleventy",
@@ -21,8 +21,12 @@
     "author": "KyleMit",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/KyleMit/eleventy-blog/issues"
+        "url": "https://github.com/KyleMit/create-eleventy-blog/issues"
     },
-    "homepage": "https://github.com/KyleMit/eleventy-blog#readme",
-    "dependencies": {}
+    "homepage": "https://github.com/KyleMit/create-eleventy-blog#readme",
+    "dependencies": {
+        "@11ty/eleventy": "^0.11.0",
+        "commander": "^6.1.0",
+        "inquirer": "^7.3.3"
+    }
 }
