@@ -1,4 +1,12 @@
 title: My Blog Title
 description: My Blog Description
+
 themeColor: "#534534"
 accentColor: "#f4177f"
+
+repo: https://github.com/KyleMit/create-eleventy-blog
+url: https://KyleMit.github.io
+baseUrl: "/create-eleventy-blog"
+
+exclude: ["*.*"]
+include: ["*.md", "*.liquid"]

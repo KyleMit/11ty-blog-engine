@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 
 const { promises: fs } = require("fs")
-const { promisify } = require('util');
+const utils = require("../utils/utils")
 const path = require("path")
-const cp = require('child_process')
-const exec = promisify(cp.exec);
 
 
-main()
+
+module.exports = main
 
 async function main() {
     try {
@@ -25,17 +24,18 @@ async function main() {
                 "presentations"
             ]
         }
+        let objConfig = await utils.getConfig()
+        console.log({ objConfig })
 
-        let curDir = process.cwd()
-        let binDir = __dirname
-        console.log({ curDir, binDir })
+        let { contentDir, engineDir } = utils.directories
+        console.log({ contentDir, engineDir })
 
-        let curSite = path.join(curDir, config.paths.siteDir)
-        let binSite = path.join(binDir, config.paths.siteDir)
-        let curAssets = path.join(curDir, config.paths.assets)
-        let binAssets = path.join(binDir, config.paths.assets)
-        let curConfig = path.join(curDir, config.paths.config)
-        let binData = path.join(binDir, config.paths.data)
+        let curSite = path.join(contentDir, config.paths.siteDir)
+        let binSite = path.join(engineDir, config.paths.siteDir)
+        let curAssets = path.join(contentDir, config.paths.assets)
+        let binAssets = path.join(engineDir, config.paths.assets)
+        let curConfig = path.join(contentDir, config.paths.config)
+        let binData = path.join(engineDir, config.paths.data)
 
         // clear site folders and temp content dir
         await fs.rmdir(curSite, { recursive: true });
@@ -45,8 +45,8 @@ async function main() {
 
         // copy content from cur dir
         for (let dir of config.contentTypes) {
-            let curContentDir = path.join(curDir, dir)
-            let binContentDir = path.join(binDir, dir)
+            let curContentDir = path.join(contentDir, dir)
+            let binContentDir = path.join(engineDir, dir)
             await copyDir(curContentDir, binContentDir)
         }
 
@@ -56,12 +56,12 @@ async function main() {
 
 
         // change working directory to bin dir
-        process.chdir(binDir);
-
+        process.chdir(engineDir);
 
         // run eleventy in bin dir
-        await cmd(`npx @11ty/eleventy ${process.argv.slice(2).join(" ")}`);
+        await utils.cmd(`npx @11ty/eleventy ${process.argv.slice(2).join(" ")}`);
 
+        process.chdir(contentDir);
 
         // move _site from binDir to curDir
         await copyDir(binSite, curSite)
@@ -74,7 +74,7 @@ async function main() {
         await fs.rmdir(binData, { recursive: true });
 
         for (let dir of config.contentTypes) {
-            let binContentDir = path.join(binDir, dir)
+            let binContentDir = path.join(engineDir, dir)
             await fs.rmdir(binContentDir, { recursive: true });
         }
 
@@ -86,11 +86,6 @@ async function main() {
 }
 
 
-async function cmd(text) {
-    const { stdout, stderr } = await exec(text);
-    console.log('stdout:', stdout);
-    console.log('stderr:', stderr);
-}
 
 async function copyDir(src, dest) {
     await fs.mkdir(dest, { recursive: true });

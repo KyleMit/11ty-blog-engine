@@ -2,4 +2,13 @@
     "yaml.schemas": {
       ".eleventyblog.schema.json": ".eleventyblog.yml"
     },
-  }
+    "emmet.includeLanguages": {
+      "njk": "html"
+    },
+    "files.associations": {
+      "*.html": "njk"
+    },
+    "vsicons.associations.files": [
+      { "icon": "nunjucks", "extensions": ["njk"], "format": "svg" }
+    ],
+}

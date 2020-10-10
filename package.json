@@ -1,9 +1,9 @@
 {
     "name": "create-eleventy-blog",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Low Code Eleventy Blog Builder",
     "bin": {
-        "create-eleventy-blog": "./cmd.js"
+        "create-eleventy-blog": "./cli.js"
     },
     "scripts": {},
     "repository": {
@@ -27,6 +27,7 @@
     "dependencies": {
         "@11ty/eleventy": "^0.11.0",
         "commander": "^6.1.0",
-        "inquirer": "^7.3.3"
+        "inquirer": "^7.3.3",
+        "js-yaml": "^3.14.0"
     }
 }
