@@ -8,6 +8,7 @@ const FOLDERS = {
     site: "_site",
     src: "src",
     temp: "temp",
+    types: "types",
     assets: "assets",
     config: "config.json",
     data: "data"
@@ -40,6 +41,9 @@ async function main() {
 
         // copy engine src into temp
         await copyDir(paths.engineSrcPath, paths.engineTempPath)
+
+        // copy engine types into temp
+        await copyDir(paths.engineTypesPath, paths.engineTempPath)
 
         // copy content types into temp
         for (let dir of CONTENT_TYPES) {
@@ -81,13 +85,14 @@ function getPaths() {
     let contentSitePath = path.join(contentDir, FOLDERS.site)
 
     let engineSrcPath = path.join(engineDir, FOLDERS.src)
+    let engineTypesPath = path.join(engineDir, FOLDERS.types)
     let engineTempPath = path.join(engineDir, FOLDERS.temp)
     let engineTempDataPath = path.join(engineTempPath, FOLDERS.data)
     let engineTempDataConfigPath = path.join(engineTempDataPath, FOLDERS.config)
     let engineSitePath = path.join(engineDir, FOLDERS.site)
 
 
-    let output = { contentDir, contentSitePath, engineDir, engineSrcPath, engineTempPath, engineTempDataPath, engineTempDataConfigPath, engineSitePath }
+    let output = { contentDir, contentSitePath, engineDir, engineSrcPath, engineTypesPath, engineTempPath, engineTempDataPath, engineTempDataConfigPath, engineSitePath }
     return output
 }
 
