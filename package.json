@@ -1,7 +1,7 @@
 {
-    "name": "@kylemit/eleventy-blog",
+    "name": "eleventy-blog",
     "version": "1.0.0",
-    "description": "Zero Config Blog Eleventy Blogging Engine",
+    "description": "Low Code Eleventy Blog Builder",
     "bin": {
         "eleventy-blog": "./cmd.js"
     },
@@ -23,5 +23,6 @@
     "bugs": {
         "url": "https://github.com/KyleMit/eleventy-blog/issues"
     },
-    "homepage": "https://github.com/KyleMit/eleventy-blog#readme"
+    "homepage": "https://github.com/KyleMit/eleventy-blog#readme",
+    "dependencies": {}
 }
