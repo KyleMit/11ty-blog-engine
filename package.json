@@ -1,15 +1,11 @@
 {
-    "name": "@kylemit/11ty-blog-engine",
+    "name": "@kylemit/eleventy-blog",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
     "bin": {
-        "11ty-blog-engine": "cmd.js"
+        "eleventy-blog": "cmd.js"
     },
-    "scripts": {
-        "build": "npx @11ty/eleventy",
-        "start": "npx @11ty/eleventy --serve"
-    },
+    "scripts": {},
     "keywords": [],
     "author": "",
     "license": "ISC",

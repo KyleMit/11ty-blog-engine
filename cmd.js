@@ -15,7 +15,9 @@ async function main() {
             paths: {
                 siteDir: "_site",
                 content: "src",
-                assets: "assets"
+                assets: "assets",
+                config: ".config",
+                data: "data"
             },
             contentTypes: [
                 "drafts",
@@ -30,31 +32,32 @@ async function main() {
 
         let curSite = path.join(curDir, config.paths.siteDir)
         let binSite = path.join(binDir, config.paths.siteDir)
-        let binContent = path.join(binDir, config.paths.content)
         let curAssets = path.join(curDir, config.paths.assets)
         let binAssets = path.join(binDir, config.paths.assets)
+        let curConfig = path.join(curDir, config.paths.config)
+        let binData = path.join(binDir, config.paths.data)
 
         // clear site folders and temp content dir
         await fs.rmdir(curSite, { recursive: true });
         await fs.rmdir(binSite, { recursive: true });
-        await fs.rmdir(binContent, { recursive: true });
         await fs.rmdir(binAssets, { recursive: true });
 
-        // generate output directory shell
-        await fs.mkdir(binContent, { recursive: true });
 
         // copy content from cur dir
         for (let dir of config.contentTypes) {
             let curContentDir = path.join(curDir, dir)
-            let binContentDir = path.join(binContent, dir)
+            let binContentDir = path.join(binDir, dir)
             await copyDir(curContentDir, binContentDir)
         }
 
-        // copy assets
+        // copy assets & data
         await copyDir(curAssets, binAssets)
+        await copyDir(curConfig, binData)
+
 
         // change working directory to bin dir
         process.chdir(binDir);
+
 
         // run eleventy in bin dir
         await cmd(`eleventy ${process.argv.slice(2).join(" ")}`);
@@ -63,10 +66,18 @@ async function main() {
         // move _site from binDir to curDir
         await copyDir(binSite, curSite)
 
+
+
         // delete temp content and site
         await fs.rmdir(binSite, { recursive: true });
-        await fs.rmdir(binContent, { recursive: true });
         await fs.rmdir(binAssets, { recursive: true });
+        await fs.rmdir(binData, { recursive: true });
+
+        for (let dir of config.contentTypes) {
+            let binContentDir = path.join(binDir, dir)
+            await fs.rmdir(binContentDir, { recursive: true });
+        }
+
 
     } catch (err) {
         console.log({ err });
