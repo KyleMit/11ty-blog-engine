@@ -7,9 +7,9 @@
 
     {# capture the CSS content as a Nunjucks variable #}
     {% set css %}
-        {% include "assets/styles/hljs-default.css" %}
-        {% include "assets/styles/fonts.css" %}
-        {% include "assets/styles/slides.css" %}
+        {% include "src/includes/styles/hljs-default.css" %}
+        {% include "src/includes/styles/fonts.css" %}
+        {% include "src/includes/styles/slides.css" %}
     {% endset %}
     {# feed it through our cssmin filter to minify #}
     <style type="text/css">{{ css | cssmin | safe }}</style>
@@ -22,7 +22,7 @@
 
 
     <a href="/slides/{{slide.pres.fileSlug}}/" class="icon-link fixed-link">
-        {% include "assets/icons/fa/arrow-left.svg" %}
+        {% include "src/includes/icons/fa/arrow-left.svg" %}
         Back to Doc Gov
     </a>
 
@@ -33,7 +33,7 @@
     </main>
 
     <script type="text/javascript">
-        {% set js %}{% include "assets/scripts/slide.js" %}{% endset %}
+        {% set js %}{% include "src/includes/scripts/slide.js" %}{% endset %}
         {{ js | jsmin | safe }}
     </script>
 </body>
