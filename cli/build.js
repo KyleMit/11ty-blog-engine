@@ -4,56 +4,69 @@ const { promises: fs } = require("fs")
 const utils = require("../utils/utils")
 const path = require("path")
 
-const FOLDERS = {
-    site: "_site",
-    src: "src",
-    temp: "temp",
-    types: "types",
-    assets: "assets",
-    config: "config.json",
-    data: "data"
-}
+const { ALL_TYPES, FILES } = require("../utils/consts")
+const { description } = require("commander")
 
-const CONTENT_TYPES = [
-    "acronyms",
-    "assets",
-    "drafts",
-    "notes",
-    "pages",
-    "posts",
-    "slides",
-    "samples"
-]
+// get paths
+let paths = utils.paths
 
 module.exports = main
 
-async function main() {
+async function main(options) {
     try {
-
-        // get config
-        let objConfig = await utils.getConfig()
-
-        // get paths
-        let paths = getPaths()
-
-        // cleanup local temp & site
-        await removeDir(paths.engineTempPath, paths.engineSitePath, paths.contentSitePath)
-
-        // copy engine src into temp
-        await copyDir(paths.engineSrcPath, paths.engineTempPath)
-
-        // copy engine types into temp
-        await copyDir(paths.engineTypesPath, paths.engineTempPath)
-
-        // copy content types into temp
-        for (let dir of CONTENT_TYPES) {
-            let contentFolder = path.join(paths.contentDir, dir)
-            let engineTempFolder = path.join(paths.engineTempPath, dir)
-            await copyDir(contentFolder, engineTempFolder)
+        // check that we have a user config
+        if (!(await utils.checkConfigExists())) {
+            console.log(`cannot perform build - must be called from a folder that has ${FILES.configInput}`)
+            return;
         }
 
+        // if we still have a temp folder, clean that up
+        if (await utils.checkDirExists(paths.engineTempPath)) {
+            // remove src and replace with temp
+            await removeDir(paths.engineSrcPath)
+            await fs.rename(paths.engineTempPath, paths.engineSrcPath)
+        }
+
+        // cleanup previous site builds
+        await removeDir(paths.engineSitePath, paths.contentSitePath)
+
+        // copy engine src into temp for safe keeping
+        await utils.copyDir(paths.engineSrcPath, paths.engineTempPath)
+
+        // copy engine types into src
+        await utils.copyDir(paths.engineTypesPath, paths.engineSrcPath)
+
+        // copy content types into src
+        for (let dir of ALL_TYPES) {
+            let contentFolder = path.join(paths.contentDir, dir)
+            let engineSrcFolder = path.join(paths.engineSrcPath, dir)
+            await utils.copyDir(contentFolder, engineSrcFolder)
+        }
+
+
+        // get config info
+        let objConfig = await utils.getConfig()
+        let { taglist: userTaglist, ...metaConfig } = objConfig
+        let actualTagList = await utils.getTags(true)
+
+        // remove tags that don't exist
+        let usedTags = userTaglist.filter(t => actualTagList.includes(t.name))
+
+        // add empty tags that do
+        let usedTagNames = usedTags.map(t => t.name)
+        let missingTagNames = actualTagList.filter(t => usedTagNames.includes(t))
+        let missingTags = missingTagNames.map(t => ({ name: t, description: "" }))
+        let allTags = usedTags.concat(missingTags)
+
         // save config in data
-        await writeJson(paths.engineTempDataConfigPath, objConfig)
+        await writeJson(paths.engineTempDataConfigPath, metaConfig)
+
+        // save taglist in data
+        await writeJson(paths.engineTempDataTaglistPath, allTags)
+
+        // exit early
+        if (options.preCompile) { return }
+
 
 
         // change working directory, run 11ty, change back
@@ -64,11 +77,14 @@ async function main() {
 
 
         // move _site from engine to content
-        await copyDir(paths.engineSitePath, paths.contentSitePath)
+        //await utils.copyDir(paths.engineSitePath, paths.contentSitePath)
+        await fs.rename(paths.engineSitePath, paths.contentSitePath)
 
-
-        // // cleanup local temp & site
-        // await removeDir(paths.engineTempPath, paths.engineSitePath)
+        if (!options.keepTemp) {
+            // cleanup local temp & site
+            await removeDir(paths.engineSrcPath)
+            await fs.rename(paths.engineTempPath, paths.engineSrcPath)
+        }
 
 
 
@@ -78,23 +94,6 @@ async function main() {
 
 }
 
-function getPaths() {
-    // get directories
-    let { contentDir, engineDir } = utils.directories
-
-    let contentSitePath = path.join(contentDir, FOLDERS.site)
-
-    let engineSrcPath = path.join(engineDir, FOLDERS.src)
-    let engineTypesPath = path.join(engineDir, FOLDERS.types)
-    let engineTempPath = path.join(engineDir, FOLDERS.temp)
-    let engineTempDataPath = path.join(engineTempPath, FOLDERS.data)
-    let engineTempDataConfigPath = path.join(engineTempDataPath, FOLDERS.config)
-    let engineSitePath = path.join(engineDir, FOLDERS.site)
-
-
-    let output = { contentDir, contentSitePath, engineDir, engineSrcPath, engineTypesPath, engineTempPath, engineTempDataPath, engineTempDataConfigPath, engineSitePath }
-    return output
-}
 
 async function removeDir(...paths) {
     await Promise.all(paths.map(async(p) => {
@@ -106,30 +105,4 @@ async function writeJson(filePath, obj) {
     let content = JSON.stringify(obj, null, 2)
     await fs.mkdir(path.dirname(filePath), { recursive: true });
     await fs.writeFile(filePath, content, 'utf8')
-}
-
-
-
-async function copyDir(src, dest) {
-    if (!(await checkDirExists(src))) { return }
-    await fs.mkdir(dest, { recursive: true });
-    let entries = await fs.readdir(src, { withFileTypes: true });
-
-    for (let entry of entries) {
-        let srcPath = path.join(src, entry.name);
-        let destPath = path.join(dest, entry.name);
-
-        entry.isDirectory() ?
-            await copyDir(srcPath, destPath) :
-            await fs.copyFile(srcPath, destPath);
-    }
-}
-
-async function checkDirExists(dir) {
-    try {
-        let stat = await fs.lstat(dir)
-        return stat.isDirectory()
-    } catch (error) {
-        return false;
-    }
 }

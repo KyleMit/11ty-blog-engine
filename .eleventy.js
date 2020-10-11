@@ -1,4 +1,9 @@
+let md = require("./utils/customize-markdown.js")()
+let collections = require("./utils/collections")
+
 module.exports = function(eleventyConfig) {
+
+    eleventyConfig.setUseGitIgnore(false);
 
     // static passthroughs - remap to root
     eleventyConfig.addPassthroughCopy({ "temp/includes/icons/fav/favicon.ico": "/favicon.ico" });
@@ -31,32 +36,17 @@ module.exports = function(eleventyConfig) {
 
     // custom collections
     eleventyConfig.addCollection("drafts", col => col.getFilteredByTag("post").filter(item => item.data.draft));
-    eleventyConfig.addCollection("published", col => {
-        let posts = col.getFilteredByTag("post").filter(item => !item.data.draft)
+    eleventyConfig.addCollection("published", collections.buildPublished);
+    eleventyConfig.addCollection("slides", (col) => collections.buildSlides(col, md));
 
-        // add previous and next
-        for (let i = 0; i < posts.length; i++) {
-            const prevPost = posts[i - 1];
-            const nextPost = posts[i + 1];
+    eleventyConfig.addCollection("bundles", collections.buildBundles);
 
-            posts[i].data.prevPost = prevPost;
-            posts[i].data.nextPost = nextPost;
-        }
-
-        return posts;
-    });
-
-    // bundle collection
-    eleventyConfig.addCollection("bundles", col => {
-        let script = col.getFilteredByGlob("**/meta/bundle-scripts.js.njk")[0]
-        let style = col.getFilteredByGlob("**/meta/bundle-styles.css.njk")[0]
-        return { script, style }
-    });
 
     // configure syntax highlighting
-    let md = require("./utils/customize-markdown.js")()
     eleventyConfig.setLibrary("md", md);
 
+
+    // add shortcodes
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
     eleventyConfig.addPairedShortcode("markdown", (content, inline = null) => {
@@ -83,7 +73,7 @@ module.exports = function(eleventyConfig) {
         dir: {
             data: "data",
             "includes": "assets",
-            "layouts": "layouts",
+            layouts: "layouts",
             input: "temp"
         },
 

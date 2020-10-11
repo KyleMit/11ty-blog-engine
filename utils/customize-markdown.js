@@ -1,10 +1,21 @@
-let { unescapeAll, escapeHtml } = require('markdown-it')().utils;
+const markdownIt = require('markdown-it')
+const markdownItDefList = require("markdown-it-deflist")
+const markdownItMark = require("markdown-it-mark")
+const markdownItIns = require("markdown-it-ins")
+const markdownItSpoiler = require("markdown-it-spoiler")
+const markdownItCheckbox = require("markdown-it-checkbox")
+const markdownItAnchor = require("markdown-it-anchor");
+
+
+const config = require("../temp/data/config")
+const markdownItFile = require("./markdown-it-file");
+const highlight = require('./customize-highlight.js');
+
+const { unescapeAll, escapeHtml } = markdownIt().utils;
 
 module.exports = function CustomizeMD() {
-    var highlight = require('./customize-highlight.js');
 
     // set markdown defaults (inline so we can extend)
-    let markdownIt = require("markdown-it");
     let options = {
         html: true,
         breaks: true,
@@ -13,7 +24,6 @@ module.exports = function CustomizeMD() {
     };
 
     // add markdown anchor options
-    let markdownItAnchor = require("markdown-it-anchor");
     let opts = {
         permalink: true,
         slugify: function(s) {
@@ -29,13 +39,6 @@ module.exports = function CustomizeMD() {
     };
 
     // add file extension
-    let markdownItFile = require("./markdown-it-file");
-    let markdownItDefList = require("markdown-it-deflist")
-    let markdownItMark = require("markdown-it-mark")
-    let markdownItIns = require("markdown-it-ins")
-    let markdownItSpoiler = require("markdown-it-spoiler")
-    let markdownItCheckbox = require("markdown-it-checkbox")
-
     let md = markdownIt(options)
         .use(markdownItAnchor, opts)
         .use(markdownItFile)
@@ -82,7 +85,6 @@ module.exports = function CustomizeMD() {
             }
         }
 
-        let config = require("../data/config")
         let externalRegex = new RegExp(`^https?:\/\/(?!${config.PROD_DOMAIN})`)
         let isExternal = externalRegex.test(token.attrGet('href'))
 

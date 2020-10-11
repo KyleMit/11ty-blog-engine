@@ -1,0 +1,8 @@
+.vscode/
+.github/
+.netlify/
+tools/
+tweets/
+samples/
+node_modules/
+_site/

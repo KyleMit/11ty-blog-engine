@@ -13,10 +13,35 @@ async function main() {
 
     // list all commands
     program
-        .command('build', { isDefault: true })
-        .description('build contents into blog')
+        .description('default command - either run build or create project')
         .action(async(cmd) => {
-            await cli.build()
+            // check for user config
+            if (checkConfigExists()) {
+                // if exists, run build
+                await cli.build(cmd.keepTemp)
+            } else {
+                // if !exists, create new project
+                await cli.create()
+            }
+        })
+
+    program
+        .command('new')
+        .description('scaffold out new project')
+        .option('-y, --yes-to-all', 'Auto accept all prompts for non-interactive project setup')
+        .action(async(cmd) => {
+            await cli.create(cmd.yesToAll)
+        })
+
+    program
+        .command('build')
+        .description('build contents into blog')
+        .option('-k, --keep-temp', 'Keep Temp Files (helpful for debugging)')
+        .option('-pc, --pre-compile', 'Precompile Site Output (helpful for debugging)')
+        .action(async(cmd) => {
+            let { keepTemp, preCompile } = cmd
+            let options = { keepTemp, preCompile }
+            await cli.build(options)
         })
 
     program
@@ -27,6 +52,13 @@ async function main() {
             utils.cmd("npx http-server ./_site -o")
         })
 
+    program
+        .command('lint')
+        .description('check for common issues')
+        .option('-f, --fix', 'Fix automatically fixable issues')
+        .action(async(cmd) => {
+            await cli.lint(cmd.fix)
+        })
 
     /* global options and start */
     await program

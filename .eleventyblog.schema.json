@@ -26,6 +26,18 @@
             "type": "string",
             "description": "Summary / description of your blog",
             "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+        },
+
+        "includeMultipleAuthors": {
+            "type": "boolean",
+            "description": "Allow for multiple authors and display author pages",
+            "default": false
+        },
+
+        "includeTaglist": {
+            "type": "boolean",
+            "description": "Provide tag overview list with user provided descriptions",
+            "default": true
         }
 
     },
@@ -36,7 +48,9 @@
         "title": { "$ref": "#/definitions/title" },
         "description": { "$ref": "#/definitions/description" },
         "themeColor": { "$ref": "#/definitions/themeColor" },
-        "accentColor": { "$ref": "#/definitions/accentColor" }
+        "accentColor": { "$ref": "#/definitions/accentColor" },
+        "includeMultipleAuthors": { "$ref": "#/definitions/includeMultipleAuthors" },
+        "includeTaglist": { "$ref": "#/definitions/includeTaglist" }
 
     },
 
