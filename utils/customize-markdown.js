@@ -7,7 +7,7 @@ const markdownItCheckbox = require("markdown-it-checkbox")
 const markdownItAnchor = require("markdown-it-anchor");
 
 
-const config = require("../temp/data/config")
+const config = require("../src/data/config")
 const markdownItFile = require("./markdown-it-file");
 const highlight = require('./customize-highlight.js');
 

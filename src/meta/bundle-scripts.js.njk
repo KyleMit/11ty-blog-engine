@@ -4,14 +4,14 @@ permalink: "assets/scripts/bundle.js"
 
 {# capture the JS content as a Nunjucks variable #}
 {% set js %}
-    {% include "includes/scripts/polyfill.js" %}
-    {% include "includes/scripts/nav-toggle.js" %}
-    {% include "includes/scripts/settings-highlight-theme.js" %}
-    {% include "includes/scripts/settings-color-scheme.js" %}
-    {% include "includes/scripts/register-service-worker.js" %}
-    {% include "includes/scripts/offline.js" %}
-    {% include "includes/scripts/copy-snippet.js" %}
-    {% include "includes/scripts/site.js" %}
+    {% include "../includes/scripts/polyfill.js" %}
+    {% include "../includes/scripts/nav-toggle.js" %}
+    {% include "../includes/scripts/settings-highlight-theme.js" %}
+    {% include "../includes/scripts/settings-color-scheme.js" %}
+    {% include "../includes/scripts/register-service-worker.js" %}
+    {% include "../includes/scripts/offline.js" %}
+    {% include "../includes/scripts/copy-snippet.js" %}
+    {% include "../includes/scripts/site.js" %}
 {% endset %}
 
 {# feed it through our cssmin filter to minify #}

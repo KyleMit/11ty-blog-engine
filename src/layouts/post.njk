@@ -59,13 +59,13 @@ layout: default.njk
 <ul id="source-code" class="nav-links">
     <li>
         <a class="icon-link" href="https://github.com/KyleMit/CodingEverything/tree/master/code-samples/{{ source }}">
-            {% include "includes/icons/fa/download.svg" %}
+            {% include "src/includes/icons/fa/download.svg" %}
             Download Source Code
         </a>
     </li>
     <li>
         <a class="icon-link" href="/code-samples/{{ source }}.zip">
-            {% include "includes/icons/fa/folder-open.svg" %}
+            {% include "src/includes/icons/fa/folder-open.svg" %}
             Browse Source Code
         </a>
     </li>
@@ -81,7 +81,7 @@ layout: default.njk
     {% if prevPost.url %}
       <li class="prev"><a  href="{{ prevPost.url }}">
         <div class="nav-arrow">
-          {% include "includes/icons/fa/arrow-left.svg" %}
+          {% include "src/includes/icons/fa/arrow-left.svg" %}
           <span class="nav-label">Previous</span>
         </div>
         <div class="nav-title">{{ prevPost.data.title or (prevPost.data.renderData and prevPost.data.renderData.title) }}</div>
@@ -92,7 +92,7 @@ layout: default.njk
       <li class="next"><a href="{{ nextPost.url }}">
         <div class="nav-arrow">
           <span class="nav-label">Next</span>
-          {% include "includes/icons/fa/arrow-right.svg" %}
+          {% include "src/includes/icons/fa/arrow-right.svg" %}
         </div>
         <div class="nav-title">{{ nextPost.data.title or (nextPost.data.renderData and nextPost.data.renderData.title) }}</div>
       </a></li>

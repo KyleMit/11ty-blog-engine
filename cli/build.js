@@ -54,15 +54,15 @@ async function main(options) {
 
         // add empty tags that do
         let usedTagNames = usedTags.map(t => t.name)
-        let missingTagNames = actualTagList.filter(t => usedTagNames.includes(t))
+        let missingTagNames = actualTagList.filter(t => !usedTagNames.includes(t))
         let missingTags = missingTagNames.map(t => ({ name: t, description: "" }))
         let allTags = usedTags.concat(missingTags)
 
         // save config in data
-        await writeJson(paths.engineTempDataConfigPath, metaConfig)
+        await writeJson(paths.engineSrcDataConfigPath, metaConfig)
 
         // save taglist in data
-        await writeJson(paths.engineTempDataTaglistPath, allTags)
+        await writeJson(paths.engineSrcDataTaglistPath, allTags)
 
         // exit early
         if (options.preCompile) { return }

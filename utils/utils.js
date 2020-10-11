@@ -41,15 +41,15 @@ function getPaths() {
 
     let engineConfigPath = path.join(engineDir, FILES.configInput)
     let engineSrcPath = path.join(engineDir, FOLDERS.src)
+    let engineSrcDataPath = path.join(engineSrcPath, FOLDERS.data)
+    let engineSrcDataConfigPath = path.join(engineSrcDataPath, FILES.configOutput)
+    let engineSrcDataTaglistPath = path.join(engineSrcDataPath, FILES.taglist)
+    let engineSitePath = path.join(engineDir, FOLDERS.site)
     let engineTypesPath = path.join(engineDir, FOLDERS.types)
     let engineTempPath = path.join(engineDir, FOLDERS.temp)
-    let engineTempDataPath = path.join(engineTempPath, FOLDERS.data)
-    let engineTempDataConfigPath = path.join(engineTempDataPath, FILES.configOutput)
-    let engineTempDataTaglistPath = path.join(engineTempDataPath, FILES.taglist)
-    let engineSitePath = path.join(engineDir, FOLDERS.site)
 
 
-    let output = { contentDir, contentSitePath, contentConfigPath, engineDir, engineConfigPath, engineSrcPath, engineTypesPath, engineTempPath, engineTempDataPath, engineTempDataConfigPath, engineTempDataTaglistPath, engineSitePath }
+    let output = { contentDir, contentSitePath, contentConfigPath, engineDir, engineConfigPath, engineSrcPath, engineTypesPath, engineTempPath, engineSrcDataPath, engineSrcDataConfigPath, engineSrcDataTaglistPath, engineSitePath }
     return output
 }
 

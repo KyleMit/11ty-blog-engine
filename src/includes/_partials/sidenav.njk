@@ -8,23 +8,23 @@
     </button>
 
     <ul class="list-unstyled">
-        <li><a href="/" class='{{ "active" if "/" == page.url }}'>{% include "includes/icons/fa/home.svg" %} Home</a></li>
+        <li><a href="/" class='{{ "active" if "/" == page.url }}'>{% include "src/includes/icons/fa/home.svg" %} Home</a></li>
         <li class="divider"></li>
-        <li><a href="/tags/" class='{{ "active" if "/tags/" in page.url }}'>{% include "includes/icons/fa/tags.svg" %} Tags</a></li>
-        <li><a href="/archive/" class='{{ "active" if "/archive/" == page.url }}'>{% include "includes/icons/fa/archive.svg" %} Archives</a></li>
+        <li><a href="/tags/" class='{{ "active" if "/tags/" in page.url }}'>{% include "src/includes/icons/fa/tags.svg" %} Tags</a></li>
+        <li><a href="/archive/" class='{{ "active" if "/archive/" == page.url }}'>{% include "src/includes/icons/fa/archive.svg" %} Archives</a></li>
         <li class="divider"></li>
-        <li><a href="/readme.md/" class='{{ "active" if "/readme.md/" == page.url }}'>{% include "includes/icons/fa/book-user.svg" %} ReadMe</a></li>
-        <li><a href="/admin/" class='{{ "active" if "/admin/" in page.url }}'>{% include "includes/icons/fa/file-edit.svg" %} CMS</a></li>
+        <li><a href="/readme.md/" class='{{ "active" if "/readme.md/" == page.url }}'>{% include "src/includes/icons/fa/book-user.svg" %} ReadMe</a></li>
+        <li><a href="/admin/" class='{{ "active" if "/admin/" in page.url }}'>{% include "src/includes/icons/fa/file-edit.svg" %} CMS</a></li>
         {% if config.ELEVENTY_ENV == 'dev' %}
             {# Only Display Drafts during local dev #}
             <li class="divider"></li>
-            <li><a href="/drafts/" class='{{ "active" if "/drafts/" in page.url }}'>{% include "includes/icons/fa/digging.svg" %} Drafts</a></li>
-            <li><a href="/notes/" class='{{ "active" if "/notes/" in page.url }}'>{% include "includes/icons/fa/sticky-note.svg" %} Notes</a></li>
+            <li><a href="/drafts/" class='{{ "active" if "/drafts/" in page.url }}'>{% include "src/includes/icons/fa/digging.svg" %} Drafts</a></li>
+            <li><a href="/notes/" class='{{ "active" if "/notes/" in page.url }}'>{% include "src/includes/icons/fa/sticky-note.svg" %} Notes</a></li>
         {% endif %}
         <li class="divider"></li>
-        <li><a href="https://github.com/KyleMit/CodingEverything/issues/">{% include "includes/icons/fa/bullhorn.svg" %} Feedback</a></li>
-        <li><a href="https://github.com/KyleMit/CodingEverything">{% include "includes/icons/fa/github.svg" %} Source</a></li>
+        <li><a href="https://github.com/KyleMit/CodingEverything/issues/">{% include "src/includes/icons/fa/bullhorn.svg" %} Feedback</a></li>
+        <li><a href="https://github.com/KyleMit/CodingEverything">{% include "src/includes/icons/fa/github.svg" %} Source</a></li>
         <li class="spacer"></li>
-        <li><a href="/settings/">{% include "includes/icons/fa/cog.svg" %} Settings</a></li>
+        <li><a href="/settings/">{% include "src/includes/icons/fa/cog.svg" %} Settings</a></li>
     </ul>
 </nav>

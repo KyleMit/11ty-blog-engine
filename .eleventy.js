@@ -3,19 +3,19 @@ let collections = require("./utils/collections")
 
 module.exports = function(eleventyConfig) {
 
-    eleventyConfig.setUseGitIgnore(false);
+    // eleventyConfig.setUseGitIgnore(false);
 
     // static passthroughs - remap to root
-    eleventyConfig.addPassthroughCopy({ "temp/includes/icons/fav/favicon.ico": "/favicon.ico" });
-    eleventyConfig.addPassthroughCopy({ "temp/includes/icons/fav/manifest.json": "/manifest.json" });
-    eleventyConfig.addPassthroughCopy({ "temp/includes/scripts/service-worker.js": "/service-worker.js" });
+    eleventyConfig.addPassthroughCopy({ "src/includes/icons/fav/favicon.ico": "/favicon.ico" });
+    eleventyConfig.addPassthroughCopy({ "src/includes/icons/fav/manifest.json": "/manifest.json" });
+    eleventyConfig.addPassthroughCopy({ "src/includes/scripts/service-worker.js": "/service-worker.js" });
 
-    eleventyConfig.addPassthroughCopy("temp/includes/images");
-    eleventyConfig.addPassthroughCopy("temp/includes/scripts");
-    eleventyConfig.addPassthroughCopy("temp/includes/styles");
-    eleventyConfig.addPassthroughCopy("temp/admin");
+    eleventyConfig.addPassthroughCopy("src/includes/images");
+    eleventyConfig.addPassthroughCopy("src/includes/scripts");
+    eleventyConfig.addPassthroughCopy("src/includes/styles");
+    eleventyConfig.addPassthroughCopy("src/admin");
 
-    eleventyConfig.addPassthroughCopy("temp/assets");
+    eleventyConfig.addPassthroughCopy("src/assets");
 
 
 
@@ -74,7 +74,7 @@ module.exports = function(eleventyConfig) {
             data: "data",
             "includes": "assets",
             layouts: "layouts",
-            input: "temp"
+            input: "src"
         },
 
         // By default markdown files are pre-processing with liquid template engine

@@ -71,7 +71,7 @@
 <body class="page no-js page-loading nav-closed {{pageClass}} {% if displayTOC %} toc-layout {% endif %}">
 
     {# scripts to run asap #}
-    {% set js %} {% include "includes/scripts/init.js" %}{% endset %}
+    {% set js %} {% include "src/includes/scripts/init.js" %}{% endset %}
     <script type="text/javascript">{{ js | jsmin | safe }}</script>
 
 
@@ -119,13 +119,13 @@
         <ul id="footer-nav" class="nav-links">
             <li>
                 <a class="icon-link" href="https://github.com/KyleMit/CodingEverything/tree/master/{{ page.inputPath }}">
-                    {% include "includes/icons/fa/edit.svg" %}
+                    {% include "src/includes/icons/fa/edit.svg" %}
                     Edit this Page
                 </a>
             </li>
             <li>
                 <a class="icon-link" href="https://github.com/KyleMit/CodingEverything/commits/master/{{ page.inputPath }}">
-                    {% include "includes/icons/fa/history.svg" %}
+                    {% include "src/includes/icons/fa/history.svg" %}
                     View Page History
                 </a>
             </li>
@@ -138,13 +138,13 @@
     </footer>
 
 
-    {% include "_partials/sidenav.njk" %}
+    {% include "src/includes/_partials/sidenav.njk" %}
 
     <script type="text/javascript">
         {{ collections.bundles.script.templateContent | safe }}
 
         {% if pageClass and 'search' in pageClass %}
-            {% set searchJs %}{% include "includes/scripts/search.js" %}{% endset %}
+            {% set searchJs %}{% include "src/includes/scripts/search.js" %}{% endset %}
             {{ searchJs | jsmin | safe }}
         {% endif %}
     </script>

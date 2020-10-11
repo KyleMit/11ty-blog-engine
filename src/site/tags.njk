@@ -8,7 +8,7 @@ permalink: /tags/{{ tag.name }}/
 renderData:
   title: Tagged "{{ tag.name }}"
 ---
-<h2><a href="/tags/"> {% include "includes/icons/fa/arrow-left.svg" %} All Tags</a></h2>
+<h2><a href="/tags/"> {% include "src/includes/icons/fa/arrow-left.svg" %} All Tags</a></h2>
 
 <h1 class="page-title">Tagged “{{ tag.name }}”</h1>
 
@@ -18,4 +18,4 @@ renderData:
 
 
 {% set postList = collections[ tag.name ] %}
-{% include "_partials/postList.njk" %}
+{% include "src/includes/_partials/postList.njk" %}

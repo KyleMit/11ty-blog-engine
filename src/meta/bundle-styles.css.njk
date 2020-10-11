@@ -4,10 +4,10 @@ permalink: "assets/styles/bundle.css"
 
 {# capture the CSS content as a Nunjucks variable #}
 {% set css %}
-    {% include "includes/styles/fonts.css" %}
-    {% include "includes/styles/styles.css" %}
-    {% include "includes/styles/dark.css" %}
-    {% include "includes/styles/hljs.css" %}
+    {% include "../includes/styles/fonts.css" %}
+    {% include "../includes/styles/styles.css" %}
+    {% include "../includes/styles/dark.css" %}
+    {% include "../includes/styles/hljs.css" %}
 {% endset %}
 
 {# feed it through our cssmin filter to minify #}

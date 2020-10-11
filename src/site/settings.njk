@@ -24,11 +24,11 @@ Device specific settings are saved in <code>localStorage</code> on this device
     <div class="display-toggle-group">
       <label >
         <input type="radio" name="site-theme" value="light" id="light" checked>
-        {% include "includes/icons/fa/lightbulb-on.svg" %}
+        {% include "src/includes/icons/fa/lightbulb-on.svg" %}
       </label>
       <label >
         <input type="radio" name="site-theme" value="dark" id="dark">
-        {% include "includes/icons/fa/lightbulb-slash.svg" %}
+        {% include "src/includes/icons/fa/lightbulb-slash.svg" %}
       </label>
     </div>
 
@@ -39,7 +39,7 @@ Device specific settings are saved in <code>localStorage</code> on this device
     <div class="display-toggle-group">
       <label >
         <input type="radio" name="site-theme" value="system" id="system">
-        {% include "includes/icons/fa/laptop.svg" %}
+        {% include "src/includes/icons/fa/laptop.svg" %}
       </label>
     </div>
 
@@ -55,7 +55,7 @@ Device specific settings are saved in <code>localStorage</code> on this device
 <h3 class="mt-2 mb-0" id="density">Display Density</h3>
 
 <div class="display-settings">
-  {% include "_partials/displayDensity.njk" %}
+  {% include "src/includes/_partials/displayDensity.njk" %}
 </div>
 
 <h3 class="mt-2 mb-0" id="theme">Syntax Highlighting Theme</h3>

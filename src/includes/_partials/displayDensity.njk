@@ -1,5 +1,5 @@
 {# capture the JS content as a Nunjucks variable #}
-{% set js %}{% include "includes/scripts/settings-display-density.js" %}{% endset %}
+{% set js %}{% include "src/includes/scripts/settings-display-density.js" %}{% endset %}
 {# feed it through our jsmin filter to minify #}
 <script type="text/javascript">{{ js | jsmin | safe }}</script>
 

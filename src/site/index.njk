@@ -11,19 +11,19 @@ pageClass: 'search'
 A curious endeavor to catalogue and document the wealth of programming knowledge available on the internet and a humble attempt to contribute to it.
 </section>
 
-        
-{% include "_partials/search.njk" %}
+
+{% include "src/includes/_partials/search.njk" %}
 
 <div class="page-title-section mt-1">
   <h1 class="page-title my-1 ">
     Recent posts
   </h1>
 
-  {% include "_partials/displayDensity.njk" %}
+  {% include "src/includes/_partials/displayDensity.njk" %}
 </div>
 
 {% set postList = collections.published | reverse | take(10) %}
-{% include "_partials/postList.njk" %}
+{% include "src/includes/_partials/postList.njk" %}
 
 {% if collections.published.length > 10 %}
   <hr>
