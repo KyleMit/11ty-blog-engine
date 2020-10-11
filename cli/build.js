@@ -23,12 +23,12 @@ async function main(options) {
         // if we still have a temp folder, clean that up
         if (await utils.checkDirExists(paths.engineTempPath)) {
             // remove src and replace with temp
-            await removeDir(paths.engineSrcPath)
+            await utils.removeDir(paths.engineSrcPath)
             await fs.rename(paths.engineTempPath, paths.engineSrcPath)
         }
 
         // cleanup previous site builds
-        await removeDir(paths.engineSitePath, paths.contentSitePath)
+        await utils.removeDir(paths.engineSitePath, paths.contentSitePath)
 
         // copy engine src into temp for safe keeping
         await utils.copyDir(paths.engineSrcPath, paths.engineTempPath)
@@ -82,7 +82,7 @@ async function main(options) {
 
         if (!options.keepTemp) {
             // cleanup local temp & site
-            await removeDir(paths.engineSrcPath)
+            await utils.removeDir(paths.engineSrcPath)
             await fs.rename(paths.engineTempPath, paths.engineSrcPath)
         }
 
@@ -95,11 +95,7 @@ async function main(options) {
 }
 
 
-async function removeDir(...paths) {
-    await Promise.all(paths.map(async(p) => {
-        fs.rmdir(p, { recursive: true });
-    }));
-}
+
 
 async function writeJson(filePath, obj) {
     let content = JSON.stringify(obj, null, 2)

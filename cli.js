@@ -53,6 +53,13 @@ async function main() {
         })
 
     program
+        .command('clean')
+        .description('cleans up temp files from local and build directories')
+        .action(async(cmd) => {
+            await cli.clean()
+        })
+
+    program
         .command('lint')
         .description('check for common issues')
         .option('-f, --fix', 'Fix automatically fixable issues')

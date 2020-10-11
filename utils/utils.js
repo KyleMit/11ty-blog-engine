@@ -21,6 +21,7 @@ module.exports = {
     checkDirExists,
     checkConfigExists,
     copyDir,
+    removeDir,
     readYamlDir,
     getTags
 }
@@ -111,6 +112,12 @@ async function copyDir(src, dest) {
             await copyDir(srcPath, destPath) :
             await fs.copyFile(srcPath, destPath);
     }
+}
+
+async function removeDir(...paths) {
+    await Promise.all(paths.map(async(p) => {
+        await fs.rmdir(p, { recursive: true });
+    }));
 }
 
 
