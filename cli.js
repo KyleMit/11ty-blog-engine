@@ -16,9 +16,9 @@ async function main() {
         .description('default command - either run build or create project')
         .action(async(cmd) => {
             // check for user config
-            if (checkConfigExists()) {
+            if (utils.checkConfigExists()) {
                 // if exists, run build
-                await cli.build(cmd.keepTemp)
+                await cli.build({})
             } else {
                 // if !exists, create new project
                 await cli.create()
