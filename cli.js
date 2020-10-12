@@ -36,11 +36,10 @@ async function main() {
     program
         .command('build')
         .description('build contents into blog')
-        .option('-k, --keep-temp', 'Keep Temp Files (helpful for debugging)')
         .option('-pc, --pre-compile', 'Precompile Site Output (helpful for debugging)')
         .action(async(cmd) => {
-            let { keepTemp, preCompile } = cmd
-            let options = { keepTemp, preCompile }
+            let { preCompile } = cmd
+            let options = { preCompile }
             await cli.build(options)
         })
 

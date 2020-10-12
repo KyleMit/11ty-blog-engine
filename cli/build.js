@@ -77,14 +77,11 @@ async function main(options) {
 
 
         // move _site from engine to content
-        //await utils.copyDir(paths.engineSitePath, paths.contentSitePath)
-        await fs.rename(paths.engineSitePath, paths.contentSitePath)
+        await utils.copyDir(paths.engineSitePath, paths.contentSitePath)
 
-        if (!options.keepTemp) {
-            // cleanup local temp & site
-            await utils.removeDir(paths.engineSrcPath)
-            await fs.rename(paths.engineTempPath, paths.engineSrcPath)
-        }
+        // cleanup local temp & site
+        await utils.removeDir(paths.engineSrcPath)
+        await fs.rename(paths.engineTempPath, paths.engineSrcPath)
 
 
 
