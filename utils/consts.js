@@ -27,7 +27,7 @@ const CONTENT_TYPES = [
     "slides",
 ]
 
-const ALL_TYPES = CONTENT_TYPES.concat(...CONTENT_TYPES)
+const ALL_TYPES = ASSET_TYPES.concat(...CONTENT_TYPES)
 
 module.exports = {
     FOLDERS,

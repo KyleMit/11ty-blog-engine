@@ -48,7 +48,7 @@ async function main() {
         .command('serve')
         .description('build contents into blog and serve locally')
         .action(async(cmd) => {
-            await cli.build()
+            await cli.build({})
             utils.cmd("npx http-server ./_site -o")
         })
 
