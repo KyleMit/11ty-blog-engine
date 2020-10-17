@@ -25,6 +25,13 @@
     },
     "homepage": "https://github.com/KyleMit/create-eleventy-blog#readme",
     "dependencies": {
+        "gumshoejs": "^5.1.2",
+        "mark.js": "^8.11.1",
+        "firacode": "^2.0.0",
+        "typeface-noto-serif": "0.0.72",
+        "typeface-roboto": "0.0.75"
+    },
+    "devDependencies": {
         "@11ty/eleventy": "^0.11.0",
         "chalk": "^4.1.0",
         "clean-css": "^4.2.3",

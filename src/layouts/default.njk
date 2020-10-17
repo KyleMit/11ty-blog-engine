@@ -47,8 +47,7 @@
 
         <a href="/" aria-label="Home Page" class="brand" >
             <span class="site-title">
-                <span class="coding"><span class="letter">&lt;</span><span class="word">oding</span></span>
-                <span class="everything"><span class="letter">Σ</span><span class="word">verything</span></span>
+                {{config.title}}
             </span>
         </a>
 
@@ -75,13 +74,13 @@
 
         <ul id="footer-nav" class="nav-links">
             <li>
-                <a class="icon-link" href="https://github.com/KyleMit/CodingEverything/tree/master/{{ page.inputPath }}">
+                <a class="icon-link" href="{{config.repo}}/tree/master/{{ page.inputPath }}">
                     {% include "src/includes/icons/fa/edit.svg" %}
                     Edit this Page
                 </a>
             </li>
             <li>
-                <a class="icon-link" href="https://github.com/KyleMit/CodingEverything/commits/master/{{ page.inputPath }}">
+                <a class="icon-link" href="{{config.repo}}/commits/master/{{ page.inputPath }}">
                     {% include "src/includes/icons/fa/history.svg" %}
                     View Page History
                 </a>

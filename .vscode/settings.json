@@ -11,4 +11,11 @@
     "vsicons.associations.files": [
       { "icon": "nunjucks", "extensions": ["njk"], "format": "svg" }
     ],
+    "json.schemas": [
+      {
+        "fileMatch": ["manifest.json"],
+        "url": "http://json.schemastore.org/web-manifest"
+      }
+    ],
+
 }
