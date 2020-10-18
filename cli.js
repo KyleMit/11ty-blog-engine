@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const inquirer = require('inquirer');
+//const inquirer = require('inquirer');
 const { program } = require('commander');
 const { version } = require("./package.json")
 const cli = require("./cli/_index")
