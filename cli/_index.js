@@ -1,11 +1,14 @@
-let build = require("./build")
-let clean = require("./clean")
-let lint = require("./lint")
-let create = require("./create")
+const build = require("./build")
+const clean = require("./clean")
+const lint = require("./lint")
+const create = require("./create")
+const debug = require("./debug")
 
+// barrel rollup
 module.exports = {
     build,
     clean,
     create,
-    lint
+    lint,
+    debug
 }

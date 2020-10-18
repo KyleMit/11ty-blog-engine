@@ -2,10 +2,11 @@
 
 //const inquirer = require('inquirer');
 const { program } = require('commander');
-const { version } = require("./package.json")
-const cli = require("./cli/_index")
-const utils = require("./utils/utils")
+const { version } = require("../package.json")
+const cli = require("./_index")
+const utils = require("../utils/utils")
 
+console.log("sefef")
 
 main()
 
@@ -18,17 +19,17 @@ async function main() {
             // check for user config
             if (utils.checkConfigExists()) {
                 // if exists, run build
-                await cli.build({})
+                await cli.build({ environment: "prod" })
             } else {
                 // if !exists, create new project
-                await cli.create()
+                await cli.create(false)
             }
         })
 
     program
         .command('new')
         .description('scaffold out new project')
-        .option('-y, --yes-to-all', 'Auto accept all prompts for non-interactive project setup')
+        .option('-y, --yes-to-all', 'Auto accept all prompts for non-interactive project setup', false)
         .action(async(cmd) => {
             await cli.create(cmd.yesToAll)
         })
@@ -36,26 +37,35 @@ async function main() {
     program
         .command('build')
         .description('build contents into blog')
-        .option('-pc, --pre-compile', 'Precompile Site Output (helpful for debugging)')
+        .option('-pc, --pre-compile', 'Precompile Site Output (helpful for debugging)', false)
+        .option('-e, --environment', 'Build environment - production runs full build (dev | prod)', "prod")
+        .option('-s, --serve', 'Spins up a simple http server in the output directory after build', false)
         .action(async(cmd) => {
-            let { preCompile } = cmd
-            let options = { preCompile }
+            let { preCompile, environment, serve } = cmd
+            let options = { preCompile, environment }
             await cli.build(options)
+            if (serve) { utils.cmd("npx http-server ./_site -o") }
         })
 
     program
         .command('serve')
         .description('build contents into blog and serve locally')
+        .option('-e, --environment', 'Build environment - production runs full build  (dev | prod)', "dev")
         .action(async(cmd) => {
-            await cli.build({})
+            let { environment } = cmd
+            let options = { environment }
+            await cli.build(options)
             utils.cmd("npx http-server ./_site -o")
         })
 
     program
         .command('clean')
         .description('cleans up temp files from local and build directories')
+        .option('-t, --target', 'The location to cleanup files (content | engine | both)', "both")
         .action(async(cmd) => {
-            await cli.clean()
+            let { target } = cmd
+            let options = { target }
+            await cli.clean(options)
         })
 
     program
@@ -64,6 +74,13 @@ async function main() {
         .option('-f, --fix', 'Fix automatically fixable issues')
         .action(async(cmd) => {
             await cli.lint(cmd.fix)
+        })
+
+    program
+        .command('debug')
+        .description('setup workspace to debug cli')
+        .action(async(cmd) => {
+            await cli.debug()
         })
 
     /* global options and start */

@@ -31,7 +31,7 @@ module.exports = {
 
 function getDirectories() {
     let contentDir = process.cwd()
-    let engineDir = __dirname.replace(/utils$/, "")
+    let engineDir = __dirname.replace(/(utils|cli)$/, "")
     return { contentDir, engineDir }
 }
 

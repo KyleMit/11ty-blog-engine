@@ -14,6 +14,9 @@ module.exports = main
 
 async function main(options) {
     try {
+        // set global variable for build context
+        process.env.ELEVENTY_ENV == process.env.ELEVENTY_ENV || options.environment
+
         // check that we have a user config
         if (!(await utils.checkConfigExists())) {
             console.log(`cannot perform build - must be called from a folder that has ${FILES.configInput}`)
