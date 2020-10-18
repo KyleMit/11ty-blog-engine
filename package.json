@@ -1,6 +1,6 @@
 {
     "name": "create-eleventy-blog",
-    "version": "0.1.7",
+    "version": "0.1.8",
     "description": "Low Code Eleventy Blog Builder",
     "bin": {
         "create-eleventy-blog": "./cli.js"
@@ -29,9 +29,7 @@
         "mark.js": "^8.11.1",
         "firacode": "^2.0.0",
         "typeface-noto-serif": "0.0.72",
-        "typeface-roboto": "0.0.75"
-    },
-    "devDependencies": {
+        "typeface-roboto": "0.0.75",
         "@11ty/eleventy": "^0.11.0",
         "chalk": "^4.1.0",
         "clean-css": "^4.2.3",
