@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-const { promises: fs } = require("fs")
-const utils = require("../utils/utils")
 const path = require("path")
-
-const { ALL_TYPES, FILES } = require("../utils/consts")
+const { promises: fs } = require("fs")
 const { description } = require("commander")
+const utils = require("../utils/utils")
+const generateFavicon = require("../utils/generate-favicon")
+const { ALL_TYPES, FILES } = require("../utils/consts")
 
 // get paths
 let paths = utils.paths
@@ -63,6 +63,13 @@ async function main(options) {
 
         // save taglist in data
         await writeJson(paths.engineSrcDataTaglistPath, allTags)
+
+
+
+        // pre-processing
+        await generateFavicon(metaConfig)
+
+
 
         // exit early
         if (options.preCompile) { return }

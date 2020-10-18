@@ -48,6 +48,7 @@
         "markdown-it-ins": "^3.0.0",
         "markdown-it-mark": "^3.0.0",
         "markdown-it-spoiler": "^1.1.1",
+        "rfg-api": "^0.5.1",
         "terser": "^5.3.4",
         "window": "^4.2.7",
         "yaml-front-matter": "^4.1.0",

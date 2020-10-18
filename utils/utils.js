@@ -19,10 +19,13 @@ module.exports = {
     cmd,
     getConfig,
     checkDirExists,
+    checkFileExists,
     checkConfigExists,
     copyDir,
     removeDir,
     readYamlDir,
+    readYaml,
+    readJson,
     getTags
 }
 
@@ -94,9 +97,23 @@ function getUrlConfig() {
 }
 
 async function readYaml(path) {
-    let text = await fs.readFile(path, 'utf8')
-    let output = yaml.safeLoad(text)
-    return output
+    try {
+        let text = await fs.readFile(path, 'utf8')
+        let output = yaml.safeLoad(text)
+        return output
+    } catch (error) {
+        return {}
+    }
+}
+
+async function readJson(path) {
+    try {
+        let text = await fs.readFile(path, 'utf8')
+        let output = JSON.parse(text)
+        return output
+    } catch (error) {
+        return {}
+    }
 }
 
 async function copyDir(src, dest) {
@@ -130,13 +147,17 @@ async function checkDirExists(dir) {
     }
 }
 
-async function checkConfigExists() {
+async function checkFileExists(filePath) {
     try {
-        await fs.access(paths.contentConfigPath, fsRoot.constants.R_OK)
+        await fs.access(filePath, fsRoot.constants.R_OK)
         return true
     } catch (error) {
         return false
     }
+}
+
+async function checkConfigExists() {
+    return await checkFileExists(paths.contentConfigPath)
 }
 
 

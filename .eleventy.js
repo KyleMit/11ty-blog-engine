@@ -6,10 +6,11 @@ module.exports = function(eleventyConfig) {
     // eleventyConfig.setUseGitIgnore(false);
 
     // static passthroughs - remap to root
-    eleventyConfig.addPassthroughCopy({ "src/includes/icons/fav/favicon.ico": "/favicon.ico" });
-    eleventyConfig.addPassthroughCopy({ "src/includes/icons/fav/manifest.json": "/manifest.json" });
+    eleventyConfig.addPassthroughCopy({ "src/includes/icons/favicon/favicon.ico": "/favicon.ico" });
+    eleventyConfig.addPassthroughCopy({ "src/includes/icons/favicon/site.webmanifest": "/site.webmanifest" });
     eleventyConfig.addPassthroughCopy({ "src/includes/scripts/service-worker.js": "/service-worker.js" });
 
+    eleventyConfig.addPassthroughCopy("src/includes/icons");
     eleventyConfig.addPassthroughCopy("src/includes/images");
     eleventyConfig.addPassthroughCopy("src/includes/scripts");
     eleventyConfig.addPassthroughCopy("src/includes/styles");
