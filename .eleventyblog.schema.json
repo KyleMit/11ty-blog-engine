@@ -1,62 +1,56 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
 
-    "title": "Create Eleventy Blog Config",
-    "description": "Validation and autocomplete for Create Eleventy Blog _config.yml file",
+  "title": "Create Eleventy Blog Config",
+  "description": "Validation and autocomplete for Create Eleventy Blog _config.yml file",
 
-    "definitions": {
-
-        "title": {
-            "type": "string",
-            "description": "Title for your Blog"
-        },
-
-        "description": {
-            "type": "string",
-            "description": "Summary / description of your blog"
-        },
-
-        "themeColor": {
-            "type": "string",
-            "description": "Summary / description of your blog",
-            "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
-        },
-
-        "accentColor": {
-            "type": "string",
-            "description": "Summary / description of your blog",
-            "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
-        },
-
-        "includeMultipleAuthors": {
-            "type": "boolean",
-            "description": "Allow for multiple authors and display author pages",
-            "default": false
-        },
-
-        "includeTaglist": {
-            "type": "boolean",
-            "description": "Provide tag overview list with user provided descriptions",
-            "default": true
-        }
-
+  "definitions": {
+    "title": {
+      "type": "string",
+      "description": "Title for your Blog"
     },
 
-    "type": "object",
-    "properties": {
-
-        "title": { "$ref": "#/definitions/title" },
-        "description": { "$ref": "#/definitions/description" },
-        "themeColor": { "$ref": "#/definitions/themeColor" },
-        "accentColor": { "$ref": "#/definitions/accentColor" },
-        "includeMultipleAuthors": { "$ref": "#/definitions/includeMultipleAuthors" },
-        "includeTaglist": { "$ref": "#/definitions/includeTaglist" }
-
+    "description": {
+      "type": "string",
+      "description": "Summary / description of your blog"
     },
 
-    "required": [
-        "title",
-        "description"
-    ]
+    "themeColor": {
+      "type": "string",
+      "description": "Summary / description of your blog",
+      "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+    },
 
+    "accentColor": {
+      "type": "string",
+      "description": "Summary / description of your blog",
+      "pattern": "^#(?:[0-9a-fA-F]{3}){1,2}$"
+    },
+
+    "includeMultipleAuthors": {
+      "type": "boolean",
+      "description": "Allow for multiple authors and display author pages",
+      "default": false
+    },
+
+    "includeTaglist": {
+      "type": "boolean",
+      "description": "Provide tag overview list with user provided descriptions",
+      "default": true
+    }
+  },
+
+  "type": "object",
+  "properties": {
+    "title": { "$ref": "#/definitions/title" },
+    "description": { "$ref": "#/definitions/description" },
+    "themeColor": { "$ref": "#/definitions/themeColor" },
+    "accentColor": { "$ref": "#/definitions/accentColor" },
+    "includeMultipleAuthors": {
+      "$ref": "#/definitions/includeMultipleAuthors"
+    },
+    "includeTaglist": { "$ref": "#/definitions/includeTaglist" }
+  },
+
+  "required": ["title", "description"]
 }

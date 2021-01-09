@@ -6,9 +6,9 @@ const debug = require("./debug")
 
 // barrel rollup
 module.exports = {
-    build,
-    clean,
-    create,
-    lint,
-    debug
+  build,
+  clean,
+  create,
+  lint,
+  debug,
 }

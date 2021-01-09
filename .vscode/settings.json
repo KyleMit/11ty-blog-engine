@@ -1,21 +1,20 @@
 {
-    "yaml.schemas": {
-      ".eleventyblog.schema.json": ".eleventyblog.yml"
-    },
-    "emmet.includeLanguages": {
-      "njk": "html"
-    },
-    "files.associations": {
-      "*.html": "njk"
-    },
-    "vsicons.associations.files": [
-      { "icon": "nunjucks", "extensions": ["njk"], "format": "svg" }
-    ],
-    "json.schemas": [
-      {
-        "fileMatch": ["site.webmanifest"],
-        "url": "http://json.schemastore.org/web-manifest"
-      }
-    ],
-
+  "yaml.schemas": {
+    ".eleventyblog.schema.json": ".eleventyblog.yml"
+  },
+  "emmet.includeLanguages": {
+    "njk": "html"
+  },
+  "files.associations": {
+    "*.html": "njk"
+  },
+  "vsicons.associations.files": [
+    { "icon": "nunjucks", "extensions": ["njk"], "format": "svg" }
+  ],
+  "json.schemas": [
+    {
+      "fileMatch": ["site.webmanifest"],
+      "url": "http://json.schemastore.org/web-manifest"
+    }
+  ]
 }

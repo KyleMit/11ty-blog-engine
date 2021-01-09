@@ -1,5 +1,5 @@
 {
-    "layout": "post.njk",
-    "tags": ["post"],
-    "draft": true
+  "layout": "post.njk",
+  "tags": ["post"],
+  "draft": true
 }

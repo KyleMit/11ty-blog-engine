@@ -1,4 +1,4 @@
 {
-    "layout": "default.njk",
-    "tags": ["page"]
+  "layout": "default.njk",
+  "tags": ["page"]
 }

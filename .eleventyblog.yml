@@ -7,7 +7,6 @@ accentColor: "#f4177f"
 includeMultipleAuthors: false
 includeTaglist: true
 
-
 includeInActivity: [posts]
 
 repo: https://github.com/KyleMit/create-eleventy-blog

@@ -5,16 +5,16 @@
  */
 
 .highlight-theme-gist .hljs {
-    display: block;
-    background: white;
-    padding: 0.5em;
-    color: #333333;
-    overflow-x: auto;
+  display: block;
+  background: white;
+  padding: 0.5em;
+  color: #333333;
+  overflow-x: auto;
 }
 
 .highlight-theme-gist .hljs-comment,
 .highlight-theme-gist .hljs-meta {
-    color: #737373;
+  color: #737373;
 }
 
 .highlight-theme-gist .hljs-variable,
@@ -22,29 +22,29 @@
 .highlight-theme-gist .hljs-strong,
 .highlight-theme-gist .hljs-emphasis,
 .highlight-theme-gist .hljs-quote {
-    color: #df5000;
+  color: #df5000;
 }
 
 .highlight-theme-gist .hljs-keyword,
 .highlight-theme-gist .hljs-selector-tag,
 .highlight-theme-gist .hljs-type {
-    color: #d73a49;
+  color: #d73a49;
 }
 
 .highlight-theme-gist .hljs-literal,
 .highlight-theme-gist .hljs-symbol,
 .highlight-theme-gist .hljs-bullet,
 .highlight-theme-gist .hljs-attribute {
-    color: #01759c;
+  color: #01759c;
 }
 
 .highlight-theme-gist .hljs-section,
 .highlight-theme-gist .hljs-name {
-    color: #477742;
+  color: #477742;
 }
 
 .highlight-theme-gist .hljs-tag {
-    color: #333333;
+  color: #333333;
 }
 
 .highlight-theme-gist .hljs-title,
@@ -53,29 +53,29 @@
 .highlight-theme-gist .hljs-selector-class,
 .highlight-theme-gist .hljs-selector-attr,
 .highlight-theme-gist .hljs-selector-pseudo {
-    color: #6f42c1;
+  color: #6f42c1;
 }
 
 .highlight-theme-gist .hljs-addition {
-    color: #55a532;
-    background-color: #eaffea;
+  color: #55a532;
+  background-color: #eaffea;
 }
 
 .highlight-theme-gist .hljs-deletion {
-    color: #bd2c00;
-    background-color: #ffecec;
+  color: #bd2c00;
+  background-color: #ffecec;
 }
 
 .highlight-theme-gist .hljs-link {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .highlight-theme-gist .hljs-number {
-    color: #005cc5;
+  color: #005cc5;
 }
 
 .highlight-theme-gist .hljs-string {
-    color: #032f62;
+  color: #032f62;
 }
 
 /*
@@ -85,24 +85,24 @@
   */
 
 .highlight-theme-github .hljs {
-    display: block;
-    overflow-x: auto;
-    padding: 0.5em;
-    color: #333;
-    background: #f8f8f8;
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
 }
 
 .highlight-theme-github .hljs-comment,
 .highlight-theme-github .hljs-quote {
-    color: #998;
-    font-style: italic;
+  color: #998;
+  font-style: italic;
 }
 
 .highlight-theme-github .hljs-keyword,
 .highlight-theme-github .hljs-selector-tag,
 .highlight-theme-github .hljs-subst {
-    color: #333;
-    font-weight: bold;
+  color: #333;
+  font-weight: bold;
 }
 
 .highlight-theme-github .hljs-number,
@@ -110,75 +110,74 @@
 .highlight-theme-github .hljs-variable,
 .highlight-theme-github .hljs-template-variable,
 .highlight-theme-github .hljs-tag .hljs-attr {
-    color: #016d6d;
+  color: #016d6d;
 }
 
 .highlight-theme-github .hljs-string,
 .highlight-theme-github .hljs-doctag {
-    color: #d14;
+  color: #d14;
 }
 
 .highlight-theme-github .hljs-title,
 .highlight-theme-github .hljs-section,
 .highlight-theme-github .hljs-selector-id {
-    color: #900;
-    font-weight: bold;
+  color: #900;
+  font-weight: bold;
 }
 
 .highlight-theme-github .hljs-subst {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 .highlight-theme-github .hljs-type,
 .highlight-theme-github .hljs-class .hljs-title {
-    color: #458;
-    font-weight: bold;
+  color: #458;
+  font-weight: bold;
 }
 
 .highlight-theme-github .hljs-tag,
 .highlight-theme-github .hljs-name,
 .highlight-theme-github .hljs-attribute,
 .highlight-theme-github .hljs-attr {
-    color: #000080;
-    font-weight: normal;
+  color: #000080;
+  font-weight: normal;
 }
 
 .highlight-theme-github .hljs-regexp,
 .highlight-theme-github .hljs-link {
-    color: #009926;
+  color: #009926;
 }
 
 .highlight-theme-github .hljs-symbol,
 .highlight-theme-github .hljs-bullet {
-    color: #990073;
+  color: #990073;
 }
 
 .highlight-theme-github .hljs-built_in,
 .highlight-theme-github .hljs-builtin-name {
-    color: #0086b3;
+  color: #0086b3;
 }
 
 .highlight-theme-github .hljs-meta {
-    color: #999;
-    font-weight: bold;
+  color: #999;
+  font-weight: bold;
 }
 
 .highlight-theme-github .hljs-deletion {
-    background: #fdd;
+  background: #fdd;
 }
 
 .highlight-theme-github .hljs-addition {
-    background: #dfd;
+  background: #dfd;
 }
 
 .highlight-theme-github .hljs-emphasis {
-    font-style: italic;
+  font-style: italic;
 }
 
 .highlight-theme-github .hljs-strong {
-    font-weight: bold;
+  font-weight: bold;
 }
-
 
 /*
    * Visual Studio 2015 dark style
@@ -186,42 +185,43 @@
    */
 
 .highlight-theme-vs .hljs {
-    display: block;
-    overflow-x: auto;
-    padding: 0.5em;
-    background: #1E1E1E;
-    color: #DCDCDC;
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #1e1e1e;
+  color: #dcdcdc;
 }
 
 .highlight-theme-vs .hljs-keyword,
 .highlight-theme-vs .hljs-literal,
 .highlight-theme-vs .hljs-symbol,
 .highlight-theme-vs .hljs-name {
-    color: #569CD6;
+  color: #569cd6;
 }
+
 .highlight-theme-vs .hljs-link {
-    color: #569CD6;
-    text-decoration: underline;
+  color: #569cd6;
+  text-decoration: underline;
 }
 
 .highlight-theme-vs .hljs-built_in,
 .highlight-theme-vs .hljs-type {
-    color: #4EC9B0;
+  color: #4ec9b0;
 }
 
 .highlight-theme-vs .hljs-number,
 .highlight-theme-vs .hljs-class {
-    color: #B8D7A3;
+  color: #b8d7a3;
 }
 
 .highlight-theme-vs .hljs-string,
 .highlight-theme-vs .hljs-meta-string {
-    color: #D69D85;
+  color: #d69d85;
 }
 
 .highlight-theme-vs .hljs-regexp,
 .highlight-theme-vs .hljs-template-tag {
-    color: #9A5334;
+  color: #9a5334;
 }
 
 .highlight-theme-vs .hljs-subst,
@@ -229,47 +229,47 @@
 .highlight-theme-vs .hljs-title,
 .highlight-theme-vs .hljs-params,
 .highlight-theme-vs .hljs-formula {
-    color: #DCDCDC;
+  color: #dcdcdc;
 }
 
 .highlight-theme-vs .hljs-comment,
 .highlight-theme-vs .hljs-quote {
-    color: #57A64A;
-    font-style: italic;
+  color: #57a64a;
+  font-style: italic;
 }
 
 .highlight-theme-vs .hljs-doctag {
-    color: #608B4E;
+  color: #608b4e;
 }
 
 .highlight-theme-vs .hljs-meta,
 .highlight-theme-vs .hljs-meta-keyword,
 .highlight-theme-vs .hljs-tag {
-    color: #9B9B9B;
+  color: #9b9b9b;
 }
 
 .highlight-theme-vs .hljs-variable,
 .highlight-theme-vs .hljs-template-variable {
-    color: #BD63C5;
+  color: #bd63c5;
 }
 
 .highlight-theme-vs .hljs-attr,
 .highlight-theme-vs .hljs-attribute,
 .highlight-theme-vs .hljs-attr,
 .highlight-theme-vs .hljs-builtin-name {
-    color: #9CDCFE;
+  color: #9cdcfe;
 }
 
 .highlight-theme-vs .hljs-section {
-    color: gold;
+  color: gold;
 }
 
 .highlight-theme-vs .hljs-emphasis {
-    font-style: italic;
+  font-style: italic;
 }
 
 .highlight-theme-vs .hljs-strong {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 /*.hljs-code {
@@ -282,17 +282,17 @@
 .highlight-theme-vs .hljs-selector-class,
 .highlight-theme-vs .hljs-selector-attr,
 .highlight-theme-vs .hljs-selector-pseudo {
-    color: #D7BA7D;
+  color: #d7ba7d;
 }
 
 .highlight-theme-vs .hljs-addition {
-    background-color: #144212;
-    display: inline-block;
-    width: 100%;
+  background-color: #144212;
+  display: inline-block;
+  width: 100%;
 }
 
 .highlight-theme-vs .hljs-deletion {
-    background-color: #600;
-    display: inline-block;
-    width: 100%;
-}  
+  background-color: #600;
+  display: inline-block;
+  width: 100%;
+}

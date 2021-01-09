@@ -1,6 +1,5 @@
 # Contributing
 
-
 ## File Structure
 
 ### Blog Contents
@@ -18,14 +17,17 @@
   * .env (optional for tweets)
 
 * Gitignore
+
   * node_modules
-  * _site
+  * \_site
 
 * Assets
+
   * assets/
   * samples/
 
 * Content
+
   * acronyms/
   * authors/
   * drafts/
@@ -38,7 +40,6 @@
   * Readme
   * License
   * Code of Conduct
-
 
 ### Blog Engine
 
@@ -56,9 +57,7 @@
   * Scripts
   * Styles
 
-
 ### Configuration Options
-
 
 ```yml
 title: VT Covid Bot Docs
@@ -75,11 +74,7 @@ include: ["*.md", "*.liquid"]
 * bio
 * taglist
 
-
-
-
 ## Features
-
 
 ### CLI
 
@@ -87,7 +82,6 @@ include: ["*.md", "*.liquid"]
 * Add Eject Option (react cli does this)
 * One Click Publish to Netlify
 * All folders optional
-
 
 ```bash
 npx create-eleventy-blog             # default command -> build
@@ -107,7 +101,7 @@ npx create-eleventy-blog interactive # walk through of command options
 
 * default cmd
   * has config -> build
-  * no config  -> new
+  * no config -> new
 
 ### Linting
 
@@ -115,13 +109,11 @@ npx create-eleventy-blog interactive # walk through of command options
 * External images
 * No Alt Tags
 
-
 ### VS Code Extension
 
 * Need VS Code Extension or NPM CLI
 * Extension can help with intellisense
   * Frontmatter Snippets
-
 
 ### Error Handling
 
@@ -129,7 +121,6 @@ Catch nunjucks exception in markdown file and add helpful error log
 
 * if you never plan on using dynamic templating, turn off templates
 * if you might want dynamic templating,
-
 
 ## Search
 
@@ -141,8 +132,6 @@ Catch nunjucks exception in markdown file and add helpful error log
 * [Creating a template repository - GitHub Docs](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-template-repository)
 * [Introducing the Deploy to Netlify button | Netlify](https://www.netlify.com/blog/2016/11/29/introducing-the-deploy-to-netlify-button/)
 
-
-
 ## Architecture
 
 ### Invocation Options
@@ -150,11 +139,9 @@ Catch nunjucks exception in markdown file and add helpful error log
 * Eleventy Wrapper - Requires NPX
 * Eleventy Plugin - Requires installation / package.json
 
-
 ### Prior Art
 
 > Combination of [jekyll gh-pages](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/about-github-pages-and-jekyll), [create-react-app](https://create-react-app.dev/), and powered by [eleventy](https://www.11ty.dev/)
-
 
 * [create-react-app](https://create-react-app.dev/)
 * [gh-pages](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/about-github-pages-and-jekyll)
@@ -180,12 +167,10 @@ Possible to Cache any steps?
 
 [github actions check if package version increased](https://github.com/marketplace/actions/version-check)
 
-
 ### Debugging
 
 [Debugging Node.JS CLI application with VSCode?](https://stackoverflow.com/q/29955126/1366033)
 [sidorares/**node-cli-debugger**](https://github.com/sidorares/node-cli-debugger) - node.js command-line debugger
-
 
 ### Previous Scripts
 
@@ -199,8 +184,6 @@ Possible to Cache any steps?
   "favicon": "npx real-favicon generate \"./tools/favicon-generator.json\" \"./tools/faviconData.json\" \"./assets/images/icons/fav\""
 }
 ```
-
-
 
 ## Todo
 
@@ -230,7 +213,6 @@ Possible to Cache any steps?
 
 * Recommended extension
 * Fix edit repo / url path
-
 
 ## NPM Link
 

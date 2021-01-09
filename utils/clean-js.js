@@ -1,18 +1,20 @@
-const Terser = require("terser");
+const Terser = require("terser")
 
 /**
  * Minify CSS source code
-  *
+ *
  * @param {String} jsSource
  */
-module.exports = function(jsSource) {
-  if (process.env.ELEVENTY_ENV === 'dev') { return jsSource }
-
-  let minified = Terser.minify(jsSource);
-  if( minified.error ) {
-      console.log("Terser error: ", minified.error);
-      return jsSource;
+module.exports = function (jsSource) {
+  if (process.env.ELEVENTY_ENV === "dev") {
+    return jsSource
   }
 
-  return minified.code;
+  let minified = Terser.minify(jsSource)
+  if (minified.error) {
+    console.log("Terser error: ", minified.error)
+    return jsSource
+  }
+
+  return minified.code
 }

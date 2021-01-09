@@ -1,5 +1,5 @@
 {
-    "layout": "post.njk",
-    "tags": ["acronym"],
-    "draft": true
+  "layout": "post.njk",
+  "tags": ["acronym"],
+  "draft": true
 }

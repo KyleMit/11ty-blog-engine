@@ -5,19 +5,12 @@
   "accentColor": "#f4177f",
   "includeMultipleAuthors": false,
   "includeTaglist": true,
-  "includeInActivity": [
-    "posts"
-  ],
+  "includeInActivity": ["posts"],
   "repo": "https://github.com/KyleMit/create-eleventy-blog-demo",
   "url": "https://create-eleventy-blog-demo.netlify.app/",
   "baseUrl": "http://localhost:8080",
-  "exclude": [
-    "*.*"
-  ],
-  "include": [
-    "*.md",
-    "*.liquid"
-  ],
+  "exclude": ["*.*"],
+  "include": ["*.md", "*.liquid"],
   "buildContext": "development",
   "baseUrlCanonical": "http://localhost:8080",
   "metaRobots": "NOINDEX,NOFOLLOW"

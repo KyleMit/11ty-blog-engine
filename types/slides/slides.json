@@ -1,4 +1,4 @@
 {
-    "layout": "presentation.njk",
-    "tags": ["presentation"]
+  "layout": "presentation.njk",
+  "tags": ["presentation"]
 }
