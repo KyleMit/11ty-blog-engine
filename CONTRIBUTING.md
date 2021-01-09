@@ -90,19 +90,19 @@ include: ["*.md", "*.liquid"]
 
 
 ```bash
-npx eleventy-blog             # default command -> build
-npx eleventy-blog build       # create _site
-npx eleventy-blog serve       # create _site and then serve
-npx eleventy-blog clean       # create _site and then serve
-npx eleventy-blog new <my-app-name>        # walk through creation - ask for name
-npx eleventy-blog generate <type-of-file> <file-name>         # walk through creation - ask for name
-npx eleventy-blog eject       # 1 way
-npx eleventy-blog debug       # make it easier to start a debug session
-npx eleventy-blog lint        # audit for common mistakes
-npx eleventy-blog publish     # github pages / netlify
-npx eleventy-blog version     # list version information
-npx eleventy-blog help        # display  command options
-npx eleventy-blog interactive # walk through of command options
+npx create-eleventy-blog             # default command -> build
+npx create-eleventy-blog build       # create _site
+npx create-eleventy-blog serve       # create _site and then serve
+npx create-eleventy-blog clean       # create _site and then serve
+npx create-eleventy-blog new <my-app-name>        # walk through creation - ask for name
+npx create-eleventy-blog generate <type-of-file> <file-name>         # walk through creation - ask for name
+npx create-eleventy-blog eject       # 1 way - add confirm dialog or -f flag
+npx create-eleventy-blog debug       # make it easier to start a debug session
+npx create-eleventy-blog lint        # audit for common mistakes
+npx create-eleventy-blog publish     # github pages / netlify
+npx create-eleventy-blog version     # list version information
+npx create-eleventy-blog help        # display  command options
+npx create-eleventy-blog interactive # walk through of command options
 ```
 
 * default cmd
@@ -213,3 +213,37 @@ Possible to Cache any steps?
     * Tree View
     * Details
 * Advanced Search
+* Comes with help docs
+  * syntax highlighting
+  * markdown
+* Synonyms for file explorer / search??
+* Add tasks to `.vscode` for run commands
+  * trying to avoid `package.json` at root which would give us npm scripts
+* Paste or snippets for plugins (twitter / youtube / fiddle)
+
+  ```json
+  {
+    "regex": "^(?:https?://)?(?:(?:(?:www\\.?)?youtube\\.com(?:/(?:(?:watch\\?.*?v=([^&\\s]+).*)|))?))",
+    "replace": "[![](https://img.youtube.com/vi/$1/0.jpg)](https://www.youtube.com/watch?v=$1)"
+  }
+  ```
+
+* Recommended extension
+* Fix edit repo / url path
+
+
+## NPM Link
+
+To use the local project for debugging, install it globally
+
+```bash
+npm i -g .
+npm link
+```
+
+From client project
+
+```bash
+npm i create-eleventy-blog -D
+npm link create-eleventy-blog
+```

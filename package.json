@@ -1,55 +1,55 @@
 {
-    "name": "create-eleventy-blog",
-    "version": "0.1.8",
-    "description": "Low Code Eleventy Blog Builder",
-    "bin": {
-        "create-eleventy-blog": "./cli/_cli.js"
-    },
-    "scripts": {},
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/KyleMit/create-eleventy-blog.git"
-    },
-    "keywords": [
-        "eleventy",
-        "static-site-generator",
-        "static-site",
-        "ssg",
-        "blog",
-        "website"
-    ],
-    "author": "KyleMit",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/KyleMit/create-eleventy-blog/issues"
-    },
-    "homepage": "https://github.com/KyleMit/create-eleventy-blog#readme",
-    "dependencies": {
-        "@11ty/eleventy": "^0.11.0",
-        "chalk": "^4.1.0",
-        "clean-css": "^4.2.3",
-        "commander": "^6.1.0",
-        "eleventy-plugin-embed-tweet": "^0.3.1",
-        "eleventy-plugin-nesting-toc": "^1.2.0",
-        "firacode": "^2.0.0",
-        "gumshoejs": "^5.1.2",
-        "he": "^1.2.0",
-        "highlightjs": "^9.16.2",
-        "inquirer": "^7.3.3",
-        "js-yaml": "^3.14.0",
-        "mark.js": "^8.11.1",
-        "markdown-it-anchor": "^6.0.0",
-        "markdown-it-checkbox": "^1.1.0",
-        "markdown-it-deflist": "^2.1.0",
-        "markdown-it-ins": "^3.0.0",
-        "markdown-it-mark": "^3.0.0",
-        "markdown-it-spoiler": "^1.1.1",
-        "rfg-api": "^0.5.1",
-        "terser": "^5.3.4",
-        "typeface-noto-serif": "0.0.72",
-        "typeface-roboto": "0.0.75",
-        "window": "^4.2.7",
-        "yaml-front-matter": "^4.1.0",
-        "zip-a-folder": "0.0.12"
-    }
+  "name": "create-eleventy-blog",
+  "version": "0.1.8",
+  "description": "Low Code Eleventy Blog Builder",
+  "bin": {
+    "create-eleventy-blog": "./cli/_cli.js",
+    "crb": "./cli/_cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KyleMit/create-eleventy-blog.git"
+  },
+  "keywords": [
+    "eleventy",
+    "static-site-generator",
+    "static-site",
+    "ssg",
+    "blog",
+    "website"
+  ],
+  "author": "KyleMit",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KyleMit/create-eleventy-blog/issues"
+  },
+  "homepage": "https://github.com/KyleMit/create-eleventy-blog#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "chalk": "^4.1.0",
+    "clean-css": "^4.2.3",
+    "commander": "^6.2.1",
+    "eleventy-plugin-embed-tweet": "^0.3.1",
+    "eleventy-plugin-nesting-toc": "^1.2.0",
+    "firacode": "^5.2.0",
+    "gumshoejs": "^5.1.2",
+    "he": "^1.2.0",
+    "highlightjs": "^9.16.2",
+    "inquirer": "^7.3.3",
+    "js-yaml": "^4.0.0",
+    "mark.js": "^8.11.1",
+    "markdown-it-anchor": "^7.0.0",
+    "markdown-it-checkbox": "^1.1.0",
+    "markdown-it-deflist": "^2.1.0",
+    "markdown-it-ins": "^3.0.1",
+    "markdown-it-mark": "^3.0.1",
+    "markdown-it-spoiler": "^1.1.1",
+    "rfg-api": "^0.5.1",
+    "terser": "^5.5.1",
+    "typeface-noto-serif": "^1.1.13",
+    "typeface-roboto": "^1.1.13",
+    "window": "^4.2.7",
+    "yaml-front-matter": "^4.1.1",
+    "zip-a-folder": "0.0.12"
+  }
 }

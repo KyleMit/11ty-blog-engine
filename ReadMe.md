@@ -9,6 +9,7 @@
 ## Commands
 
 ```bash
-npm install -g eleventy-blog
+npm install -g create-eleventy-blog # install
+npx create-eleventy-blog            # build
+npx create-eleventy-blog serve      # serve
 ```
-
