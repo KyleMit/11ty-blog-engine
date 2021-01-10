@@ -51,5 +51,18 @@
     "window": "^4.2.7",
     "yaml-front-matter": "^4.1.1",
     "zip-a-folder": "0.0.12"
+  },
+  "devDependencies": {
+    "eslint": "^7.17.0",
+    "husky": "^4.3.7",
+    "lint-staged": "^10.5.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
   }
 }

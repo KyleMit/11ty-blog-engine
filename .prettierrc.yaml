@@ -3,4 +3,5 @@ tabWidth: 2
 useTabs: false
 arrowParens: always
 parser: babel
-printWidth: 190
+printWidth: 100
+
