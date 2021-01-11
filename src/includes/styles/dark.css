@@ -1,7 +1,5 @@
-.unused    {
-
+.unused-rule {
 }
-
 
 /* dark theme */
 
@@ -47,7 +45,7 @@ body.color-theme-dark {
 }
 
 .color-theme-dark .toc a:hover,
-.color-theme-dark .toc li.active>a {
+.color-theme-dark .toc li.active > a {
   color: #5db6d9;
 }
 
@@ -80,13 +78,13 @@ body.color-theme-dark {
 
 /* elements */
 
-.color-theme-dark a>code {
+.color-theme-dark a > code {
   /* transparency allows anchor background to be visible */
   border: 1px solid rgba(72, 64, 52, 0.8);
   background: rgba(43, 41, 37, 0.4);
 }
 
-.color-theme-dark pre>code {
+.color-theme-dark pre > code {
   border: none;
   background: transparent;
 }
@@ -113,12 +111,12 @@ body.color-theme-dark {
   border: 1px solid #504a00;
 }
 
-.color-theme-dark td>mark {
+.color-theme-dark td > mark {
   box-shadow: 0 0 0 250px #635b00;
   border: none;
 }
 
-.color-theme-dark td>ins {
+.color-theme-dark td > ins {
   box-shadow: 0 0 0 250px #195027;
   border: none;
 }
@@ -163,10 +161,12 @@ body.color-theme-dark {
 
 .color-theme-dark .content a,
 .color-theme-dark .footer a {
-  background-image: linear-gradient(transparent 0,
-      transparent calc(50% - 8px),
-      hsla(198, 100%, 37%, 0.3) calc(50% - 8px),
-      hsla(198, 100%, 37%, 0.3) 100%);
+  background-image: linear-gradient(
+    transparent 0,
+    transparent calc(50% - 8px),
+    hsla(198, 100%, 37%, 0.3) calc(50% - 8px),
+    hsla(198, 100%, 37%, 0.3) 100%
+  );
 }
 
 /* search results */
@@ -246,29 +246,35 @@ body.color-theme-dark {
 }
 
 .color-theme-dark .post a .post-title {
-  background-image: linear-gradient(transparent 0,
-      transparent calc(50% - 8px),
-      hsla(198, 100%, 37%, 0.2) calc(50% - 8px),
-      hsla(198, 100%, 37%, 0.2) 100%);
+  background-image: linear-gradient(
+    transparent 0,
+    transparent calc(50% - 8px),
+    hsla(198, 100%, 37%, 0.2) calc(50% - 8px),
+    hsla(198, 100%, 37%, 0.2) 100%
+  );
 }
 
 .color-theme-dark .post a:hover .post-title {
-  background-image: linear-gradient(transparent 0,
-      transparent calc(50% - 8px),
-      hsla(198, 100%, 37%, 0.4) calc(50% - 8px),
-      hsla(198, 100%, 37%, 0.4) 100%);
+  background-image: linear-gradient(
+    transparent 0,
+    transparent calc(50% - 8px),
+    hsla(198, 100%, 37%, 0.4) calc(50% - 8px),
+    hsla(198, 100%, 37%, 0.4) 100%
+  );
 }
 
 .color-theme-dark .post a .post-title:hover {
-  background-image: linear-gradient(transparent 0,
-      transparent calc(50% - 8px),
-      hsla(198, 100%, 37%, 0.4) calc(50% - 8px),
-      hsla(198, 100%, 37%, 0.4) 100%);
+  background-image: linear-gradient(
+    transparent 0,
+    transparent calc(50% - 8px),
+    hsla(198, 100%, 37%, 0.4) calc(50% - 8px),
+    hsla(198, 100%, 37%, 0.4) 100%
+  );
 }
 
 /* settings */
 
-.color-theme-dark .themes :checked+span {
+.color-theme-dark .themes :checked + span {
   background: #3e527d;
   border-left: 2px solid #2565f9;
 }
@@ -295,10 +301,7 @@ body.color-theme-dark {
 
 .color-theme-dark .alert.alert-warn a,
 .color-theme-dark .alert.alert-warn a:hover {
-  background-image: linear-gradient(transparent 0,
-      transparent calc(50% - 4px),
-      #704f01 calc(50% - 8px),
-      #704f01 100%);
+  background-image: linear-gradient(transparent 0, transparent calc(50% - 4px), #704f01 calc(50% - 8px), #704f01 100%);
 }
 
 /* tweets */

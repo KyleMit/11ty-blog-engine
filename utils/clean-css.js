@@ -1,7 +1,5 @@
 const CleanCSS = require("clean-css")
 
-let unused = "name"
-
 /**
  * Minify CSS source code
  *
