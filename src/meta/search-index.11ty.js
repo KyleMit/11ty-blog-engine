@@ -17,11 +17,7 @@ class SearchIndex {
         url: item.url,
         title: item.data.title || item.data.renderData.title || "",
         date: dateDisplay(item.data.date),
-        summary:
-          item.data.summary ||
-          item.data.title ||
-          item.data.renderData.title ||
-          "",
+        summary: item.data.summary || item.data.title || item.data.renderData.title || "",
         content: sanitize(item.templateContent),
       }
     })

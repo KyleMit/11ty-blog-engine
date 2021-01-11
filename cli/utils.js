@@ -95,8 +95,7 @@ function getUrlConfig() {
   let defaultDevUrl = "http://localhost:8080"
 
   let buildContext = CONTEXT ? CONTEXT : "development" //  production | deploy-preview | branch-deploy | development
-  let baseUrl =
-    CONTEXT == "production" ? URL : DEPLOY_PRIME_URL || defaultDevUrl
+  let baseUrl = CONTEXT == "production" ? URL : DEPLOY_PRIME_URL || defaultDevUrl
   let baseUrlCanonical = URL ? URL : defaultDevUrl
   let metaRobots = CONTEXT == "production" ? "INDEX,FOLLOW" : "NOINDEX,NOFOLLOW"
 
@@ -145,9 +144,7 @@ async function copyDir(src, dest) {
     let srcPath = path.join(src, entry.name)
     let destPath = path.join(dest, entry.name)
 
-    entry.isDirectory()
-      ? await copyDir(srcPath, destPath)
-      : await fs.copyFile(srcPath, destPath)
+    entry.isDirectory() ? await copyDir(srcPath, destPath) : await fs.copyFile(srcPath, destPath)
   }
 }
 
@@ -212,9 +209,7 @@ async function readYamlDir(src, arr) {
   for (let entry of entries) {
     let srcPath = path.join(src, entry.name)
 
-    entry.isDirectory()
-      ? await readYamlDir(srcPath, arr)
-      : await readYamlFile(srcPath, arr)
+    entry.isDirectory() ? await readYamlDir(srcPath, arr) : await readYamlFile(srcPath, arr)
   }
 
   return arr

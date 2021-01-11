@@ -8,9 +8,7 @@
   "files.associations": {
     "*.html": "njk"
   },
-  "vsicons.associations.files": [
-    { "icon": "nunjucks", "extensions": ["njk"], "format": "svg" }
-  ],
+  "vsicons.associations.files": [{ "icon": "nunjucks", "extensions": ["njk"], "format": "svg" }],
   "json.schemas": [
     {
       "fileMatch": ["site.webmanifest"],

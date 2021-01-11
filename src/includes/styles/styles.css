@@ -43,7 +43,6 @@ body {
 }
 
 @supports (display: grid) {
-
   /* if we have grid, we don't need left margin */
   header.header,
   main.content,
@@ -57,13 +56,13 @@ body {
   display: grid;
   grid-template-rows: auto auto 1fr auto;
   grid-template-columns: 225px 1fr minmax(100px, 48rem) 1fr;
-  grid-template-areas: "nav banner banner banner""nav . head .""nav . main .""nav foot foot foot";
+  grid-template-areas: "nav banner banner banner" "nav . head ." "nav . main ." "nav foot foot foot";
   min-height: 100%;
 }
 
 body.toc-layout {
   grid-template-columns: 225px 1fr minmax(100px, 48rem) 1fr 225px;
-  grid-template-areas: "nav banner banner banner banner""nav . head . .""nav . main . toc""nav foot foot foot foot";
+  grid-template-areas: "nav banner banner banner banner" "nav . head . ." "nav . main . toc" "nav foot foot foot foot";
 }
 
 header.header,
@@ -159,7 +158,7 @@ main.content {
 @media (max-width: 1100px) {
   body.toc-layout {
     grid-template-columns: 225px 1fr minmax(100px, 48rem) 1fr;
-    grid-template-areas: "nav banner banner banner""nav . head .""nav . main .""nav foot foot foot";
+    grid-template-areas: "nav banner banner banner" "nav . head ." "nav . main ." "nav foot foot foot";
   }
 
   aside.toc {
@@ -168,7 +167,6 @@ main.content {
 }
 
 @media (min-width: 865px) {
-
   /* had nav toggles by default */
   .page .hamburger {
     display: none;
@@ -176,7 +174,6 @@ main.content {
 }
 
 @media (max-width: 865px) {
-
   /* only show nav toggles on small screens */
   .page .hamburger {
     display: flex;
@@ -192,7 +189,7 @@ main.content {
   /* remove nav from grid-template */
   body.page {
     grid-template-columns: 1fr minmax(100px, 48rem) 1fr;
-    grid-template-areas: "banner banner banner"". head ."". main .""foot foot foot";
+    grid-template-areas: "banner banner banner" ". head ." ". main ." "foot foot foot";
   }
 
   /* animated opening by changing left toggle */
@@ -223,7 +220,7 @@ aside.toc {
   overflow-y: auto;
 }
 
-.toc>h3 {
+.toc > h3 {
   margin-top: 2.6rem;
 }
 
@@ -250,7 +247,7 @@ aside.toc {
 }
 
 .toc a:hover,
-.toc li.active>a {
+.toc li.active > a {
   color: #1a7498;
 }
 
@@ -266,7 +263,7 @@ aside.toc {
 }
 
 .toc a:hover::before,
-.toc li.active>a::before {
+.toc li.active > a::before {
   opacity: 1;
 }
 
@@ -343,7 +340,7 @@ kbd {
 
 /* allow anchor background to be visible */
 
-a>code {
+a > code {
   border: 1px solid rgba(255, 237, 210, 0.8);
   background: rgba(255, 237, 210, 0.4);
 }
@@ -379,10 +376,12 @@ blockquote strong {
 }
 
 .content blockquote a {
-  background-image: linear-gradient(transparent 0,
-      transparent calc(50% - 8px),
-      rgb(198, 238, 255) calc(50% - 8px),
-      rgb(137, 188, 210) 100%);
+  background-image: linear-gradient(
+    transparent 0,
+    transparent calc(50% - 8px),
+    rgb(198, 238, 255) calc(50% - 8px),
+    rgb(137, 188, 210) 100%
+  );
 }
 
 hr {
@@ -464,10 +463,7 @@ ins {
 
 .alert.alert-warn a,
 .alert.alert-warn a:hover {
-  background-image: linear-gradient(transparent 0,
-      transparent calc(50% - 8px),
-      #ffbe2d calc(50% - 8px),
-      #ffbe2d 100%);
+  background-image: linear-gradient(transparent 0, transparent calc(50% - 8px), #ffbe2d calc(50% - 8px), #ffbe2d 100%);
 }
 
 /* banner */
@@ -522,7 +518,7 @@ dt {
   display: flex;
 }
 
-.split>* {
+.split > * {
   flex: 1;
   width: 50%;
 }
@@ -583,10 +579,12 @@ dt {
   color: #111;
   padding: 0;
   text-decoration: none;
-  background-image: linear-gradient(transparent 0,
-      transparent calc(50% - 8px),
-      rgba(198, 238, 255, 0.35) calc(50% - 8px),
-      rgba(198, 238, 255, 0.35) 100%);
+  background-image: linear-gradient(
+    transparent 0,
+    transparent calc(50% - 8px),
+    rgba(198, 238, 255, 0.35) calc(50% - 8px),
+    rgba(198, 238, 255, 0.35) 100%
+  );
   transition: background-position 120ms ease-in-out, padding 120ms ease-in-out;
   background-size: 100% 200%;
   background-position: 0 0;
@@ -596,10 +594,12 @@ dt {
 .content a:focus,
 .footer a:hover,
 .footer a:focus {
-  background-image: linear-gradient(transparent 0,
-      transparent calc(50% - 8px),
-      rgba(198, 238, 255, 1) calc(50% - 8px),
-      rgba(198, 238, 255, 1) 100%);
+  background-image: linear-gradient(
+    transparent 0,
+    transparent calc(50% - 8px),
+    rgba(198, 238, 255, 1) calc(50% - 8px),
+    rgba(198, 238, 255, 1) 100%
+  );
   background-position: 0 100%;
 }
 
@@ -644,15 +644,17 @@ dt {
   border-radius: 0px 4px 4px 0px;
 }
 
-.radio-buttons li+li a {
+.radio-buttons li + li a {
   margin-left: -1px;
 }
 
 .radio-buttons a[aria-current] {
-  background-image: linear-gradient(transparent 0,
-      transparent calc(50% - 8px),
-      rgb(221, 245, 255) calc(50% - 8px),
-      rgba(221, 245, 255) 100%);
+  background-image: linear-gradient(
+    transparent 0,
+    transparent calc(50% - 8px),
+    rgb(221, 245, 255) calc(50% - 8px),
+    rgba(221, 245, 255) 100%
+  );
   background-position: 0 100%;
   cursor: default;
 }
@@ -837,27 +839,33 @@ section.intro {
 
 .post a .post-title {
   display: inline;
-  background-image: linear-gradient(transparent 0,
-      transparent calc(50% - 8px),
-      rgba(198, 238, 255, 0.55) calc(50% - 8px),
-      rgba(198, 238, 255, 0.55) 100%);
+  background-image: linear-gradient(
+    transparent 0,
+    transparent calc(50% - 8px),
+    rgba(198, 238, 255, 0.55) calc(50% - 8px),
+    rgba(198, 238, 255, 0.55) 100%
+  );
   background-size: 100% 200%;
   background-position: 0 10%;
   transition: background-position 120ms ease-in-out;
 }
 
 .post a:hover .post-title {
-  background-image: linear-gradient(transparent 0,
-      transparent calc(50% - 8px),
-      rgba(198, 238, 255, 0.75) calc(50% - 8px),
-      rgba(198, 238, 255, 0.75) 100%);
+  background-image: linear-gradient(
+    transparent 0,
+    transparent calc(50% - 8px),
+    rgba(198, 238, 255, 0.75) calc(50% - 8px),
+    rgba(198, 238, 255, 0.75) 100%
+  );
 }
 
 .post a .post-title:hover {
-  background-image: linear-gradient(transparent 0,
-      transparent calc(50% - 8px),
-      rgba(198, 238, 255, 1) calc(50% - 8px),
-      rgba(198, 238, 255, 1) 100%);
+  background-image: linear-gradient(
+    transparent 0,
+    transparent calc(50% - 8px),
+    rgba(198, 238, 255, 1) calc(50% - 8px),
+    rgba(198, 238, 255, 1) 100%
+  );
   background-position: 0 100%;
 }
 
@@ -867,7 +875,7 @@ section.intro {
   font-size: 1.7rem;
 }
 
-.page-title+.post-meta {
+.page-title + .post-meta {
   margin-top: -1rem;
 }
 
@@ -998,18 +1006,18 @@ section.intro {
   left: -999px;
 }
 
-.display-toggle-group input:checked+.display-icon,
-.display-toggle-group input:checked+svg {
+.display-toggle-group input:checked + .display-icon,
+.display-toggle-group input:checked + svg {
   background: #5757ff;
   color: white;
   cursor: default;
 }
 
-input:checked+.display-icon .bar {
+input:checked + .display-icon .bar {
   background: #d4d7ff;
 }
 
-input:focus+.display-icon {
+input:focus + .display-icon {
   box-shadow: 0 0 3px 1px #2196f3;
 }
 
@@ -1167,11 +1175,11 @@ input.hide-clear[type="search"]::-webkit-search-results-decoration {
   z-index: 3;
 }
 
-#search-results>p:first-child {
+#search-results > p:first-child {
   margin-top: 0;
 }
 
-#search-results>p {
+#search-results > p {
   padding: 0 0.5rem;
 }
 
@@ -1304,12 +1312,12 @@ td svg {
 
 /* table highlighting */
 
-td>ins {
+td > ins {
   box-shadow: 0 0 0 250px #77ff9a;
   border: none;
 }
 
-td>mark {
+td > mark {
   box-shadow: 0 0 0 250px #fff36b;
   border: none;
 }
@@ -1767,27 +1775,27 @@ aside::-webkit-scrollbar {
 
 /*Hide the checkmark by default*/
 
-.checkbox input[type="checkbox"]+label::after {
+.checkbox input[type="checkbox"] + label::after {
   content: none;
 }
 
 /*Unhide on the checked state*/
 
-.checkbox input[type="checkbox"]:checked+label::after {
+.checkbox input[type="checkbox"]:checked + label::after {
   content: "";
 }
 
-.checkbox input[type="checkbox"]:checked+label::before {
+.checkbox input[type="checkbox"]:checked + label::before {
   background: #4e8bd6;
 }
 
 /*Adding focus styles on the outer-box of the fake checkbox*/
 
-.checkbox input[type="checkbox"]:focus+label::before {
+.checkbox input[type="checkbox"]:focus + label::before {
   outline: rgb(59, 153, 252) auto 5px;
 }
 
-.checkbox+br {
+.checkbox + br {
   /* md will add extra whitespace */
   display: none;
 }

@@ -20,10 +20,7 @@ function groupTags(tags) {
   let alphaTags = objectTags.sort((a, b) => a.tag.localeCompare(b.tag))
 
   // group by and count
-  let groupedTags = metaTags.reduce(
-    (grp, tag) => ((grp[tag] = ++grp[tag] || 1), grp),
-    {}
-  )
+  let groupedTags = metaTags.reduce((grp, tag) => ((grp[tag] = ++grp[tag] || 1), grp), {})
 
   // map to objects
   let objectTags = Object.keys(groupedTags).map((tag) => ({

@@ -1,120 +1,121 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-    {% include "src/includes/_partials/meta.njk" %}
+    <head>
+        {% include "src/includes/_partials/meta.njk" %}
 
-    {# Structured Content #}
-    {# <script type="application/ld+json">{% include ld ignore missing %}</script> #}
-    {% if ld %}
-        <script type="application/ld+json">{% include ld %}</script>
-    {% endif %}
+        {# Structured Content #}
+        {# <script type="application/ld+json">{% include ld ignore missing %}</script> #}
+        {% if ld %}
+            <script type="application/ld+json">
+                {% include ld %}
+            </script>
+        {% endif %}
 
-    {# Google Fonts #}
-    {# <link href="https://fonts.googleapis.com/css?family=Fira+Code|Noto+Serif|Roboto&display=swap" rel="stylesheet"> #}
+        {# Google Fonts #}
+        {# <link href="https://fonts.googleapis.com/css?family=Fira+Code|Noto+Serif|Roboto&display=swap" rel="stylesheet"> #}
 
-    <style type="text/css">
-        /* minimal style sheet if something goes wrong */
-        img[src$=".svg"], svg {max-width: 25px;}
-        {{ collections.bundles.style.templateContent | safe }}
-    </style>
+        <style type="text/css">
+            /* minimal style sheet if something goes wrong */
+            img[src$=".svg"],
+            svg {
+                max-width: 25px;
+            }
+            {{collections.bundles.style.templateContent | safe}}
+        </style>
 
-</head>
+    </head>
 
-{# display toc if we're on a post and we got results #}
-{% set tocHtml = content | toc | removeHash | removeParen %}
-{% set displayTOC = (tags | isPostType or toc) and tocHtml %}
+    {# display toc if we're on a post and we got results #}
+    {% set tocHtml = content | toc | removeHash | removeParen %}
+    {% set displayTOC = (tags | isPostType or toc)and tocHtml %}
 
-<body class="page no-js page-loading nav-closed {{pageClass}} {% if displayTOC %} toc-layout {% endif %}">
+    <body class="page no-js page-loading nav-closed {{pageClass}} {% if displayTOC %} toc-layout {% endif %}">
 
-    {# scripts to run asap #}
-    {% set js %} {% include "src/includes/scripts/init.js" %}{% endset %}
-    <script type="text/javascript">{{ js | jsmin | safe }}</script>
+        {# scripts to run asap #}
+        {% set js %}
+        {% include "src/includes/scripts/init.js" %}{% endset %}
+        <script type="text/javascript">
+            {{ js | jsmin | safe }}
+        </script>
 
-
-    {# hide by default - show if offline #}
-    <div class="banner banner-dark banner-offline">
-        {# todo - include in build #}
-        Offline Mode <img src="/includes/icons/fa/wifi-slash.svg" class="fa ml-1" alt="WiFi Disonnected">
-    </div>
-
-    <header id="header" class="header">
-        <button class="hamburger nav-toggle" type="button" id="navToggleBody"
-                aria-haspopup="true" aria-expanded="false" aria-label="Toggle side navbar">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </button>
-
-        <a href="/" aria-label="Home Page" class="brand" >
-            <span class="site-title">
-                {{config.title}}
-            </span>
-        </a>
-
-
-    </header>
-
-
-    <main class="content">
-
-        {{ content | safe }}
-
-    </main>
-
-    {% if displayTOC %}
-        <aside class="toc">
-            <h3>Contents</h3>
-            {{ tocHtml | safe }}
-        </aside>
-    {% endif %}
-
-
-    <footer class="footer">
-
-
-        <ul id="footer-nav" class="nav-links">
-            <li>
-                <a class="icon-link" href="{{config.repo}}/tree/master/{{ page.inputPath }}">
-                    {% include "src/includes/icons/fa/edit.svg" %}
-                    Edit this Page
-                </a>
-            </li>
-            <li>
-                <a class="icon-link" href="{{config.repo}}/commits/master/{{ page.inputPath }}">
-                    {% include "src/includes/icons/fa/history.svg" %}
-                    View Page History
-                </a>
-            </li>
-        </ul>
-
-        <div class="copy-line">
-            <span class="copyright">&copy; Kyle Mitofsky {% year %} </span>
+        {# hide by default - show if offline #}
+        <div class="banner banner-dark banner-offline">
+            {# todo - include in build #}
+            Offline Mode
+            <img src="/includes/icons/fa/wifi-slash.svg" class="fa ml-1" alt="WiFi Disonnected">
         </div>
 
-    </footer>
+        <header id="header" class="header">
+            <button class="hamburger nav-toggle" type="button" id="navToggleBody" aria-haspopup="true" aria-expanded="false" aria-label="Toggle side navbar">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
 
+            <a href="/" aria-label="Home Page" class="brand">
+                <span class="site-title">
+                    {{config.title}}
+                </span>
+            </a>
 
-    {% include "src/includes/_partials/sidenav.njk" %}
+        </header>
 
-    <script type="text/javascript">
-        {{ collections.bundles.script.templateContent | safe }}
+        <main class="content">
 
-        {% if pageClass and 'search' in pageClass %}
-            {% set searchJs %}{% include "src/includes/scripts/search.js" %}{% endset %}
-            {{ searchJs | jsmin | safe }}
+            {{ content | safe }}
+
+        </main>
+
+        {% if displayTOC %}
+            <aside class="toc">
+                <h3>Contents</h3>
+                {{ tocHtml | safe }}
+            </aside>
         {% endif %}
-    </script>
 
+        <footer class="footer">
 
-    {# we only need scroll spy if we have a table of contents #}
-    {% if displayTOC %}
-        <script src="/vendor/scripts/gumshoe.js"></script>
-        <script src="/assets/scripts/scroll-spy.js"></script>
-    {% endif %}
+            <ul id="footer-nav" class="nav-links">
+                <li>
+                    <a class="icon-link" href="{{config.repo}}/tree/master/{{ page.inputPath }}">
+                        {% include "src/includes/icons/fa/edit.svg" %}
+                        Edit this Page
+                    </a>
+                </li>
+                <li>
+                    <a class="icon-link" href="{{config.repo}}/commits/master/{{ page.inputPath }}">
+                        {% include "src/includes/icons/fa/history.svg" %}
+                        View Page History
+                    </a>
+                </li>
+            </ul>
 
+            <div class="copy-line">
+                <span class="copyright">&copy; Kyle Mitofsky
+                    {% year %}
+                </span>
+            </div>
 
+        </footer>
 
-</body>
+        {% include "src/includes/_partials/sidenav.njk" %}
+
+        <script type="text/javascript">
+            {{ collections.bundles.script.templateContent | safe }}
+
+            {% if pageClass and 'search' in pageClass %}
+                {% set searchJs %}{% include "src/includes/scripts/search.js" %}{% endset %}
+                {{ searchJs | jsmin | safe }}
+            {% endif %}
+        </script>
+
+        {# we only need scroll spy if we have a table of contents #}
+        {% if displayTOC %}
+            <script src="/vendor/scripts/gumshoe.js"></script>
+            <script src="/assets/scripts/scroll-spy.js"></script>
+        {% endif %}
+
+    </body>
 
 </html>

@@ -3,10 +3,7 @@ document.body.addEventListener("click", function (e) {
   if (e.target.matches(".nav-toggle, .nav-toggle *")) {
     e.preventDefault()
     toggleNav()
-  } else if (
-    !document.body.classList.contains("nav-closed") &&
-    !e.target.matches(".sidenav, .sidenav *")
-  ) {
+  } else if (!document.body.classList.contains("nav-closed") && !e.target.matches(".sidenav, .sidenav *")) {
     // if the nav bar is open, and we clicked off it, toggle (close)
     toggleNav()
   }
@@ -63,8 +60,7 @@ function handleTouchEnd(evt) {
     var movedRight = xDiff < 0
     var notScrollable = !IsScrollable(evt.target)
 
-    var shouldOpen =
-      movedMostlyHorizontal && movedFarEnough && movedRight && notScrollable
+    var shouldOpen = movedMostlyHorizontal && movedFarEnough && movedRight && notScrollable
 
     if (shouldOpen) {
       toggleNav()

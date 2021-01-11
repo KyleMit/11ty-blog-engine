@@ -86,10 +86,7 @@ module.exports = function ins_plugin(md) {
       token.type = "mark_open"
       token.tag = "a"
       token.attrJoin("class", "file")
-      token.attrJoin(
-        "href",
-        `file:///${state.tokens[endDelim.token - 1].content}`
-      )
+      token.attrJoin("href", `file:///${state.tokens[endDelim.token - 1].content}`)
       token.nesting = 1
       token.markup = "$$"
       token.content = ""
@@ -101,10 +98,7 @@ module.exports = function ins_plugin(md) {
       token.markup = "$$"
       token.content = ""
 
-      if (
-        state.tokens[endDelim.token - 1].type === "text" &&
-        state.tokens[endDelim.token - 1].content === "$"
-      ) {
+      if (state.tokens[endDelim.token - 1].type === "text" && state.tokens[endDelim.token - 1].content === "$") {
         loneMarkers.push(endDelim.token - 1)
       }
     }

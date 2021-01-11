@@ -29,8 +29,7 @@
 
 @font-face {
   font-family: "Fira Code";
-  src: url("/assets/fonts/FiraCode-Bold.woff2") format("woff2"),
-    url("/assets/fonts/FiraCode-Bold.woff") format("woff");
+  src: url("/assets/fonts/FiraCode-Bold.woff2") format("woff2"), url("/assets/fonts/FiraCode-Bold.woff") format("woff");
   font-weight: 700;
   font-display: swap;
   font-style: normal;
@@ -53,10 +52,8 @@
   font-style: normal;
   font-display: swap;
   font-weight: 100;
-  src: local("Roboto Thin "), local("Roboto-Thin"),
-    url("/assets/fonts/roboto-latin-100.woff2") format("woff2"),
-    /* Super Modern Browsers */
-    url("/assets/fonts/roboto-latin-100.woff") format("woff");
+  src: local("Roboto Thin "), local("Roboto-Thin"), url("/assets/fonts/roboto-latin-100.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("/assets/fonts/roboto-latin-100.woff") format("woff");
   /* Modern Browsers */
 }
 
@@ -68,8 +65,7 @@
   font-weight: 100;
   src: local("Roboto Thin italic"), local("Roboto-Thinitalic"),
     url("/assets/fonts/roboto-latin-100italic.woff2") format("woff2"),
-    /* Super Modern Browsers */
-    url("/assets/fonts/roboto-latin-100italic.woff") format("woff");
+    /* Super Modern Browsers */ url("/assets/fonts/roboto-latin-100italic.woff") format("woff");
   /* Modern Browsers */
 }
 
@@ -79,10 +75,8 @@
   font-style: normal;
   font-display: swap;
   font-weight: 300;
-  src: local("Roboto Light "), local("Roboto-Light"),
-    url("/assets/fonts/roboto-latin-300.woff2") format("woff2"),
-    /* Super Modern Browsers */
-    url("/assets/fonts/roboto-latin-300.woff") format("woff");
+  src: local("Roboto Light "), local("Roboto-Light"), url("/assets/fonts/roboto-latin-300.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("/assets/fonts/roboto-latin-300.woff") format("woff");
   /* Modern Browsers */
 }
 
@@ -94,8 +88,7 @@
   font-weight: 300;
   src: local("Roboto Light italic"), local("Roboto-Lightitalic"),
     url("/assets/fonts/roboto-latin-300italic.woff2") format("woff2"),
-    /* Super Modern Browsers */
-    url("/assets/fonts/roboto-latin-300italic.woff") format("woff");
+    /* Super Modern Browsers */ url("/assets/fonts/roboto-latin-300italic.woff") format("woff");
   /* Modern Browsers */
 }
 
@@ -105,10 +98,8 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: local("Roboto Regular "), local("Roboto-Regular"),
-    url("/assets/fonts/roboto-latin-400.woff2") format("woff2"),
-    /* Super Modern Browsers */
-    url("/assets/fonts/roboto-latin-400.woff") format("woff");
+  src: local("Roboto Regular "), local("Roboto-Regular"), url("/assets/fonts/roboto-latin-400.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("/assets/fonts/roboto-latin-400.woff") format("woff");
   /* Modern Browsers */
 }
 
@@ -120,8 +111,7 @@
   font-weight: 400;
   src: local("Roboto Regular italic"), local("Roboto-Regularitalic"),
     url("/assets/fonts/roboto-latin-400italic.woff2") format("woff2"),
-    /* Super Modern Browsers */
-    url("/assets/fonts/roboto-latin-400italic.woff") format("woff");
+    /* Super Modern Browsers */ url("/assets/fonts/roboto-latin-400italic.woff") format("woff");
   /* Modern Browsers */
 }
 
@@ -131,10 +121,8 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src: local("Roboto Medium "), local("Roboto-Medium"),
-    url("/assets/fonts/roboto-latin-500.woff2") format("woff2"),
-    /* Super Modern Browsers */
-    url("/assets/fonts/roboto-latin-500.woff") format("woff");
+  src: local("Roboto Medium "), local("Roboto-Medium"), url("/assets/fonts/roboto-latin-500.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("/assets/fonts/roboto-latin-500.woff") format("woff");
   /* Modern Browsers */
 }
 
@@ -146,8 +134,7 @@
   font-weight: 500;
   src: local("Roboto Medium italic"), local("Roboto-Mediumitalic"),
     url("/assets/fonts/roboto-latin-500italic.woff2") format("woff2"),
-    /* Super Modern Browsers */
-    url("/assets/fonts/roboto-latin-500italic.woff") format("woff");
+    /* Super Modern Browsers */ url("/assets/fonts/roboto-latin-500italic.woff") format("woff");
   /* Modern Browsers */
 }
 
@@ -157,10 +144,8 @@
   font-style: normal;
   font-display: swap;
   font-weight: 700;
-  src: local("Roboto Bold "), local("Roboto-Bold"),
-    url("/assets/fonts/roboto-latin-700.woff2") format("woff2"),
-    /* Super Modern Browsers */
-    url("/assets/fonts/roboto-latin-700.woff") format("woff");
+  src: local("Roboto Bold "), local("Roboto-Bold"), url("/assets/fonts/roboto-latin-700.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("/assets/fonts/roboto-latin-700.woff") format("woff");
   /* Modern Browsers */
 }
 
@@ -172,8 +157,7 @@
   font-weight: 700;
   src: local("Roboto Bold italic"), local("Roboto-Bolditalic"),
     url("/assets/fonts/roboto-latin-700italic.woff2") format("woff2"),
-    /* Super Modern Browsers */
-    url("/assets/fonts/roboto-latin-700italic.woff") format("woff");
+    /* Super Modern Browsers */ url("/assets/fonts/roboto-latin-700italic.woff") format("woff");
   /* Modern Browsers */
 }
 
@@ -183,10 +167,8 @@
   font-style: normal;
   font-display: swap;
   font-weight: 900;
-  src: local("Roboto Black "), local("Roboto-Black"),
-    url("/assets/fonts/roboto-latin-900.woff2") format("woff2"),
-    /* Super Modern Browsers */
-    url("/assets/fonts/roboto-latin-900.woff") format("woff");
+  src: local("Roboto Black "), local("Roboto-Black"), url("/assets/fonts/roboto-latin-900.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("/assets/fonts/roboto-latin-900.woff") format("woff");
   /* Modern Browsers */
 }
 
@@ -198,8 +180,7 @@
   font-weight: 900;
   src: local("Roboto Black italic"), local("Roboto-Blackitalic"),
     url("/assets/fonts/roboto-latin-900italic.woff2") format("woff2"),
-    /* Super Modern Browsers */
-    url("/assets/fonts/roboto-latin-900italic.woff") format("woff");
+    /* Super Modern Browsers */ url("/assets/fonts/roboto-latin-900italic.woff") format("woff");
   /* Modern Browsers */
 }
 
@@ -212,8 +193,7 @@
   font-weight: 400;
   src: local("Noto Serif Regular "), local("Noto Serif-Regular"),
     url("/assets/fonts/noto-serif-latin-400.woff2") format("woff2"),
-    /* Super Modern Browsers */
-    url("/assets/fonts/noto-serif-latin-400.woff") format("woff");
+    /* Super Modern Browsers */ url("/assets/fonts/noto-serif-latin-400.woff") format("woff");
   /* Modern Browsers */
 }
 
@@ -225,8 +205,7 @@
   font-weight: 400;
   src: local("Noto Serif Regular italic"), local("Noto Serif-Regularitalic"),
     url("/assets/fonts/noto-serif-latin-400italic.woff2") format("woff2"),
-    /* Super Modern Browsers */
-    url("/assets/fonts/noto-serif-latin-400italic.woff") format("woff");
+    /* Super Modern Browsers */ url("/assets/fonts/noto-serif-latin-400italic.woff") format("woff");
   /* Modern Browsers */
 }
 
@@ -238,8 +217,7 @@
   font-weight: 700;
   src: local("Noto Serif Bold "), local("Noto Serif-Bold"),
     url("/assets/fonts/noto-serif-latin-700.woff2") format("woff2"),
-    /* Super Modern Browsers */
-    url("/assets/fonts/noto-serif-latin-700.woff") format("woff");
+    /* Super Modern Browsers */ url("/assets/fonts/noto-serif-latin-700.woff") format("woff");
   /* Modern Browsers */
 }
 
@@ -251,7 +229,6 @@
   font-weight: 700;
   src: local("Noto Serif Bold italic"), local("Noto Serif-Bolditalic"),
     url("/assets/fonts/noto-serif-latin-700italic.woff2") format("woff2"),
-    /* Super Modern Browsers */
-    url("/assets/fonts/noto-serif-latin-700italic.woff") format("woff");
+    /* Super Modern Browsers */ url("/assets/fonts/noto-serif-latin-700italic.woff") format("woff");
   /* Modern Browsers */
 }

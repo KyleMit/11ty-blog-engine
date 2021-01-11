@@ -18,9 +18,7 @@ const COPY_BTN = `<button class="btn-icon btn-copy">
 function highlight(str, lang, info) {
   // grab fenced block metadata
   let useRaw = info.includes("raw")
-  var params = info
-    .split(" ")
-    .map((p) => ({ key: p.split("=")[0], val: p.split("=")[1] }))
+  var params = info.split(" ").map((p) => ({ key: p.split("=")[0], val: p.split("=")[1] }))
   var filename = params.find((p) => p.key === "file")
   var title = params.find((p) => p.key === "title")
 

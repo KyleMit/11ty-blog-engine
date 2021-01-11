@@ -29,8 +29,8 @@ ol {
   display: inline-block;
 }
 
-li>ol,
-li>ul {
+li > ol,
+li > ul {
   display: block;
 }
 
@@ -60,9 +60,7 @@ pre.hljs {
 
 body {
   background: rgb(0, 43, 54);
-  background: radial-gradient(circle,
-      rgba(0, 43, 54, 1) 42%,
-      rgba(8, 64, 78, 1) 100%);
+  background: radial-gradient(circle, rgba(0, 43, 54, 1) 42%, rgba(8, 64, 78, 1) 100%);
   color: #a2b7b7;
   font-family: "Roboto", sans-serif;
 }

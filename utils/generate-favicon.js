@@ -42,11 +42,7 @@ async function main(config) {
   let generateFaviconAsync = promisify(rfg.generateFavicon)
 
   let generatedResult = await generateFaviconAsync(request, outputDir)
-  await fs.writeFile(
-    faviconFile,
-    JSON.stringify(generatedResult, null, 2),
-    "utf8"
-  )
+  await fs.writeFile(faviconFile, JSON.stringify(generatedResult, null, 2), "utf8")
 
   // write favicons to cache
   // todo use settings to configure cache usage
@@ -59,9 +55,7 @@ async function getFavicon(config) {
 
   // TODO - update colors on default favicon with theme and accent colors if we're going to use it
 
-  let mainFavicon = (await utils.checkFileExists(userFavicon))
-    ? userFavicon
-    : defaultFavicon
+  let mainFavicon = (await utils.checkFileExists(userFavicon)) ? userFavicon : defaultFavicon
   return mainFavicon
 }
 

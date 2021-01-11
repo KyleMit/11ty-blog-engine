@@ -19,9 +19,7 @@ async function main(options) {
 
     // check that we have a user config
     if (!(await utils.checkConfigExists())) {
-      console.log(
-        `cannot perform build - must be called from a folder that has ${FILES.configInput}`
-      )
+      console.log(`cannot perform build - must be called from a folder that has ${FILES.configInput}`)
       return
     }
 

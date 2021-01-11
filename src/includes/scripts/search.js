@@ -14,10 +14,7 @@
    * @return {String} The markup
    */
   var createNoResultsHTML = function () {
-    return (
-      "<button id='close-search' aria-label='Close'>×</button>" +
-      "<p>Sorry, no matches were found.</p>"
-    )
+    return "<button id='close-search' aria-label='Close'>×</button>" + "<p>Sorry, no matches were found.</p>"
   }
 
   /**
@@ -25,10 +22,7 @@
    * @return {String} The markup
    */
   var createNoInputHTML = function () {
-    return (
-      "<button id='close-search' aria-label='Close'>×</button>" +
-      "<p>Start typing to search</p>"
-    )
+    return "<button id='close-search' aria-label='Close'>×</button>" + "<p>Start typing to search</p>"
   }
 
   var highlightSnippet = function (text, query, summary) {
@@ -120,9 +114,7 @@
       "<h2>" +
       highlightText(article.title, query) +
       "</h2>" +
-      (matchInTitle
-        ? ""
-        : highlightSnippet(article.content, query, article.summary)) +
+      (matchInTitle ? "" : highlightSnippet(article.content, query, article.summary)) +
       "</a>" +
       "</li>"
     return html
@@ -136,12 +128,7 @@
   var createResultsHTML = function (results, query) {
     var html = "<button id='close-search' aria-label='Close'>×</button>"
 
-    html +=
-      "<p>Found " +
-      results.length +
-      " matching article" +
-      (results.length === 1 ? "" : "s") +
-      "</p>"
+    html += "<p>Found " + results.length + " matching article" + (results.length === 1 ? "" : "s") + "</p>"
 
     // limit rending results to first 20
     results = results.slice(0, 20)
@@ -197,10 +184,7 @@
     results = unique(results)
 
     // Display the results
-    resultList.innerHTML =
-      results.length < 1
-        ? createNoResultsHTML()
-        : createResultsHTML(results, query)
+    resultList.innerHTML = results.length < 1 ? createNoResultsHTML() : createResultsHTML(results, query)
 
     // set search mode
     document.body.classList.add("searching")

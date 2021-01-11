@@ -34,10 +34,7 @@ function copyToClipboard(text, callback) {
     return true
   }
 
-  if (
-    document.queryCommandSupported &&
-    document.queryCommandSupported("copy")
-  ) {
+  if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
     var textArea = document.createElement("textarea")
 
     // Place in top-left corner of screen regardless of scroll position.

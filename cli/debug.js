@@ -6,15 +6,7 @@ const utils = require("./utils")
 
 const paths = utils.paths
 
-const gitIgnoreLines = [
-  "_site",
-  ".cache",
-  ".netlify",
-  "node_modules",
-  ".env",
-  "package.json",
-  "package-lock.json",
-]
+const gitIgnoreLines = ["_site", ".cache", ".netlify", "node_modules", ".env", "package.json", "package-lock.json"]
 
 module.exports = main
 
@@ -63,9 +55,7 @@ async function buildGitIgnore() {
     // modify if we need
     let gitignoreCurrent = await fs.readFile(gitIgnorePath, "utf8")
     // check if lines in gitignore
-    let missingLines = gitIgnoreLines.filter(
-      (l) => !gitignoreCurrent.includes(l)
-    )
+    let missingLines = gitIgnoreLines.filter((l) => !gitignoreCurrent.includes(l))
     if (missingLines.length) {
       let appendLines = `# create eleventy blog \n` + missingLines.join("\n")
       await fs.writeFile(gitIgnorePath, gitignoreCurrent + appendLines, "utf8")
@@ -91,9 +81,7 @@ async function buildLaunchFile() {
     // if it already exists, make sure we have a config setup
     let curLaunchContents = await utils.readJson(launchFile)
     let launchProgram = launchConfig.configurations[0].program
-    let launchHasProgram = curLaunchContents.configurations.includes(
-      (c) => c.program === launchProgram
-    )
+    let launchHasProgram = curLaunchContents.configurations.includes((c) => c.program === launchProgram)
 
     if (!launchHasProgram) {
       // let's update it
@@ -113,8 +101,7 @@ const launchConfig = {
       type: "node",
       request: "launch",
       name: "CLI - Sub Command",
-      program:
-        "${workspaceFolder}/node_modules/create-eleventy-blog/cli/_cli.js",
+      program: "${workspaceFolder}/node_modules/create-eleventy-blog/cli/_cli.js",
       args: ["build"],
       runtimeArgs: ["--preserve-symlinks"],
       skipFiles: ["<node_internals>/**"],

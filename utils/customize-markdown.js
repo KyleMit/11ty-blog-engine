@@ -58,9 +58,7 @@ module.exports = function CustomizeMD() {
 
   // when rendering table, wrap in div container
   md.renderer.rules.table_open = function (tokens, idx, options, env, self) {
-    return (
-      `<div class='table-wrapper'>` + self.renderToken(tokens, idx, options)
-    )
+    return `<div class='table-wrapper'>` + self.renderToken(tokens, idx, options)
   }
   md.renderer.rules.table_close = function (tokens, idx, options, env, self) {
     return self.renderToken(tokens, idx, options) + `</div>`
@@ -86,8 +84,7 @@ module.exports = function CustomizeMD() {
         token.attrPush([attrName, attrValue])
       } else {
         // update value of existing attr
-        token.attrs[index][1] =
-          (append ? token.attrs[index][1] : "") + attrValue
+        token.attrs[index][1] = (append ? token.attrs[index][1] : "") + attrValue
       }
     }
 
@@ -125,9 +122,7 @@ function fence(tokens, idx, options, env, slf) {
 
   if (options.highlight) {
     // NOTE - this is the only line that's any different from by passing info to highlight
-    highlighted =
-      options.highlight(token.content, langName, info) ||
-      escapeHtml(token.content)
+    highlighted = options.highlight(token.content, langName, info) || escapeHtml(token.content)
   } else {
     highlighted = escapeHtml(token.content)
   }
@@ -154,20 +149,8 @@ function fence(tokens, idx, options, env, slf) {
       attrs: tmpAttrs,
     }
 
-    return (
-      "<pre><code" +
-      slf.renderAttrs(tmpToken) +
-      ">" +
-      highlighted +
-      "</code></pre>\n"
-    )
+    return "<pre><code" + slf.renderAttrs(tmpToken) + ">" + highlighted + "</code></pre>\n"
   }
 
-  return (
-    "<pre><code" +
-    slf.renderAttrs(token) +
-    ">" +
-    highlighted +
-    "</code></pre>\n"
-  )
+  return "<pre><code" + slf.renderAttrs(token) + ">" + highlighted + "</code></pre>\n"
 }

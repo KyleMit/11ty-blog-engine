@@ -15,14 +15,7 @@ const FILES = {
 
 const ASSET_TYPES = ["assets", "samples"]
 
-const CONTENT_TYPES = [
-  "acronyms",
-  "drafts",
-  "notes",
-  "pages",
-  "posts",
-  "slides",
-]
+const CONTENT_TYPES = ["acronyms", "drafts", "notes", "pages", "posts", "slides"]
 
 const ALL_TYPES = ASSET_TYPES.concat(...CONTENT_TYPES)
 

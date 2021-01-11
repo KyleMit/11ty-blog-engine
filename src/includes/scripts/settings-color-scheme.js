@@ -15,23 +15,19 @@ setColorScheme(siteSchemeVal)
 // wait for the dom load to parse remaining elements
 document.addEventListener("DOMContentLoaded", function () {
   // set appropriate state on checkboxes once they've loaded
-  var displayEl = document.querySelector(
-    "input[type='radio'][name='site-theme'][value='" + siteSchemeVal + "']"
-  )
+  var displayEl = document.querySelector("input[type='radio'][name='site-theme'][value='" + siteSchemeVal + "']")
   if (displayEl) {
     displayEl.checked = true
   }
 
   // on change, set body class and local storage (after dom loaded)
-  document
-    .querySelectorAll("input[type='radio'][name='site-theme']")
-    .forEach(function (el) {
-      el.addEventListener("change", function (e) {
-        var curSiteTheme = e.target.value
-        localStorage.setItem("settings-color-scheme", curSiteTheme)
-        setColorScheme(curSiteTheme)
-      })
+  document.querySelectorAll("input[type='radio'][name='site-theme']").forEach(function (el) {
+    el.addEventListener("change", function (e) {
+      var curSiteTheme = e.target.value
+      localStorage.setItem("settings-color-scheme", curSiteTheme)
+      setColorScheme(curSiteTheme)
     })
+  })
 })
 
 // on form load, set radio and body (immediately after body opening tag)

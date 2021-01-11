@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/KyleMit/create-eleventy-blog#readme",
   "scripts": {
-    "lint-all": "prettier --write '**/*.{js,json,md,css}' --ignore-path .gitignore",
+    "lint-all": "npx prettier --write **/*.{js,json,css} --ignore-path .gitignore",
     "lint-staged": "npx lint-staged"
   },
   "dependencies": {
@@ -67,7 +67,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,json,md,css}": "prettier --write"
+    "*.{js,json,css}": "prettier --write"
   },
   "prettier": {
     "semi": false,
