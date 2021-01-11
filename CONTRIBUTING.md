@@ -229,3 +229,12 @@ From client project
 npm i create-eleventy-blog -D
 npm link create-eleventy-blog
 ```
+
+
+## Coding Conventions
+
+* Use conventions set in `.eslintrc.yml` and `.prettierrc.yaml`
+* Husky and lint-staged will evaluated staged files
+  * To check yourself, run `npx lint-staged --help`
+  * To bypass checks, add no `--no-verify` flag to git commands (but please don't)
+

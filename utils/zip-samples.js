@@ -3,7 +3,7 @@ const { join } = require("path")
 const zipFolder = require("zip-a-folder")
 
 const inputDir = "code-samples"
-const outputDir = "_site";
+const outputDir = "_site"
 
 main()
 
