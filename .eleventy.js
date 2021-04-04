@@ -31,7 +31,7 @@ module.exports = function (eleventyConfig) {
 
   // add filters
   eleventyConfig.addFilter("cssmin", require("./utils/clean-css.js"))
-  eleventyConfig.addFilter("jsmin", require("./utils/clean-js.js"))
+  eleventyConfig.addNunjucksAsyncFilter("jsmin", require("./utils/clean-js.js"))
   eleventyConfig.addFilter("dateDisplay", require("./utils/dates.js"))
   eleventyConfig.addFilter("removeHash", (html) => html.replace(/ #/g, ""))
   eleventyConfig.addFilter("removeParen", (html) => html.replace(/\(.*?\)/g, ""))

@@ -4,59 +4,59 @@
 
 ### Blog Contents
 
-- Config
+* Config
 
-  - .vscode/
-  - .config/
-    - taglist.yaml
-    - .eleventyblog.yml
-    - bio.md
-    - favicon.json
-    - favicon.svg
-  - .cache/
-  - .eleventyblog.yml
-  - .env (optional for tweets)
+  * .vscode/
+  * .config/
+    * taglist.yaml
+    * .eleventyblog.yml
+    * bio.md
+    * favicon.json
+    * favicon.svg
+  * .cache/
+  * .eleventyblog.yml
+  * .env (optional for tweets)
 
-- Gitignore
+* Gitignore
 
-  - node_modules
-  - \_site
+  * node_modules
+  * \_site
 
-- Assets
+* Assets
 
-  - assets/
-  - samples/
+  * assets/
+  * samples/
 
-- Content
+* Content
 
-  - acronyms/
-  - authors/
-  - drafts/
-  - notes/
-  - slides/
-  - pages/
-  - posts/
+  * acronyms/
+  * authors/
+  * drafts/
+  * notes/
+  * slides/
+  * pages/
+  * posts/
 
-- Root
-  - Readme
-  - License
-  - Code of Conduct
+* Root
+  * Readme
+  * License
+  * Code of Conduct
 
 ### Blog Engine
 
-- Utilities
-- CLI
-- Tools
-- Pages/meta
-- Pages/site
-- Layouts
-- Admin
-- Includes
-  - Partials
-  - Images
-  - Icons
-  - Scripts
-  - Styles
+* Utilities
+* CLI
+* Tools
+* Pages/meta
+* Pages/site
+* Layouts
+* Admin
+* Includes
+  * Partials
+  * Images
+  * Icons
+  * Scripts
+  * Styles
 
 ### Configuration Options
 
@@ -69,23 +69,23 @@ exclude: ["*.*"]
 include: ["*.md", "*.liquid"]
 ```
 
-- add themes
-- navbar order
-- JSON Schema Validator
-- bio
-- taglist
+* navbar order
+* bio
+* taglist
+* add themes
+
+Add JSON Schema Validator
 
 ## Features
 
 ### CLI
 
-- Add Front Matter (based on type)
-- Add Eject Option (react cli does this)
-- One Click Publish to Netlify
-- All folders optional
+* Add Front Matter (based on type)
+* Add Eject Option (react cli does this)
+* All folders optional
 
 ```bash
-npx create-eleventy-blog             # default command -> build
+npx create-eleventy-blog             # default command -> build or help?
 npx create-eleventy-blog build       # create _site
 npx create-eleventy-blog serve       # create _site and then serve
 npx create-eleventy-blog clean       # create _site and then serve
@@ -100,67 +100,67 @@ npx create-eleventy-blog help        # display  command options
 npx create-eleventy-blog interactive # walk through of command options
 ```
 
-- default cmd
-  - has config -> build
-  - no config -> new
+* default cmd
+  * has config -> build
+  * no config -> new
 
 ### Linting
 
-- Dead links
-- External images
-- No Alt Tags
+* Dead links
+* External images
+* No Alt Tags
 
 ### VS Code Extension
 
-- Need VS Code Extension or NPM CLI
-- Extension can help with intellisense
-  - Frontmatter Snippets
+* Need VS Code Extension or NPM CLI
+* Extension can help with intellisense
+  * Frontmatter Snippets
 
 ### Error Handling
 
 Catch nunjucks exception in markdown file and add helpful error log
 
-- if you never plan on using dynamic templating, turn off templates
-- if you might want dynamic templating,
+* if you never plan on using dynamic templating, turn off templates
+* if you might want dynamic templating,
 
 ## Search
 
-- VanillaJS
-- [Algolia search](https://github.com/algolia/algoliasearch-netlify)
+* VanillaJS
+* [Algolia search](https://github.com/algolia/algoliasearch-netlify)
 
 ## Deployment
 
-- [Creating a template repository - GitHub Docs](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-template-repository)
-- [Introducing the Deploy to Netlify button | Netlify](https://www.netlify.com/blog/2016/11/29/introducing-the-deploy-to-netlify-button/)
+* [Creating a template repository - GitHub Docs](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-template-repository)
+* [Introducing the Deploy to Netlify button | Netlify](https://www.netlify.com/blog/2016/11/29/introducing-the-deploy-to-netlify-button/)
 
 ## Architecture
 
 ### Invocation Options
 
-- Eleventy Wrapper - Requires NPX
-- Eleventy Plugin - Requires installation / package.json
+* Eleventy Wrapper - Requires NPX
+* Eleventy Plugin - Requires installation / package.json
 
 ### Prior Art
 
 > Combination of [jekyll gh-pages](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/about-github-pages-and-jekyll), [create-react-app](https://create-react-app.dev/), and powered by [eleventy](https://www.11ty.dev/)
 
-- [create-react-app](https://create-react-app.dev/)
-- [gh-pages](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/about-github-pages-and-jekyll)
-- [Ember CLI Commands](https://cli.emberjs.com/release/basic-use/cli-commands/)
-- [11ty/eleventy-base-blog](https://github.com/11ty/eleventy-base-blog) - A starter repository for a blog web site using the Eleventy static site generator
+* [create-react-app](https://create-react-app.dev/)
+* [gh-pages](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/about-github-pages-and-jekyll)
+* [Ember CLI Commands](https://cli.emberjs.com/release/basic-use/cli-commands/)
+* [11ty/eleventy-base-blog](https://github.com/11ty/eleventy-base-blog) - A starter repository for a blog web site using the Eleventy static site generator
 
 ### Build Steps
 
-- Copy `src` -> `src.bak`
-- Copy `client`/`types` -> `src`/
-- Transform Config -> `data/config`
-- Pre-processing
-  - Generate Favicons
-- run eleventy
-  - Twitter API
-  - Images?
-- Post-processing?
-  - Images?
+* Copy `src` -> `src.bak`
+* Copy `client`/`types` -> `src`/
+* Transform Config -> `data/config`
+* Pre-processing
+  * Generate Favicons
+* run eleventy
+  * Twitter API
+  * Images?
+* Post-processing?
+  * Images?
 
 Possible to Cache any steps?
 
@@ -188,22 +188,22 @@ Possible to Cache any steps?
 
 ## Todo
 
-- Include author bio / bios
-- About Me / Authors
-- Include Icons for notes
-- Notes Views
-  - View Filter
-    - Icon Grid
-    - Tree View
-    - Details
-- Advanced Search
-- Comes with help docs
-  - syntax highlighting
-  - markdown
-- Synonyms for file explorer / search??
-- Add tasks to `.vscode` for run commands
-  - trying to avoid `package.json` at root which would give us npm scripts
-- Paste or snippets for plugins (twitter / youtube / fiddle)
+* Include author bio / bios
+* About Me / Authors
+* Include Icons for notes
+* Notes Views
+  * View Filter
+    * Icon Grid
+    * Tree View
+    * Details
+* Advanced Search
+* Comes with help docs
+  * syntax highlighting
+  * markdown
+* Synonyms for file explorer / search??
+* Add tasks to `.vscode` for run commands
+  * trying to avoid `package.json` at root which would give us npm scripts
+* Paste or snippets for plugins (twitter / youtube / fiddle)
 
   ```json
   {
@@ -212,8 +212,21 @@ Possible to Cache any steps?
   }
   ```
 
-- Recommended extension
-- Fix edit repo / url path
+* Recommended extension
+* Fix edit repo / url path
+* One Click Publish to Netlify
+* Gallery / Built With
+* Architectural Concept of "renderers"?
+  * Content Renderers
+    * Youtube
+    * CodePen
+    * Tweet
+  * Page Renderer
+    * Presentation
+    * Stack Overflow Q/A
+    * Notes
+    * Blog Post
+
 
 ## NPM Link
 
@@ -233,7 +246,7 @@ npm link create-eleventy-blog
 
 ## Coding Conventions
 
-- Use conventions set in `.eslintrc.yml` and `.prettierrc.yaml`
-- Husky and [lint-staged](https://github.com/okonet/lint-staged) will evaluated staged files
-  - To check yourself, run `npx lint-staged --help`
-  - To bypass checks, add no `--no-verify` flag to git commands (but please don't)
+* Use conventions set in `.eslintrc.yml` and `.prettierrc.yaml`
+* Husky and [lint-staged](https://github.com/okonet/lint-staged) will evaluated staged files
+  * To check yourself, run `npx lint-staged --help`
+  * To bypass checks, add no `--no-verify` flag to git commands (but please don't)

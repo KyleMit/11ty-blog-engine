@@ -4,7 +4,7 @@
   "description": "Low Code Eleventy Blog Builder",
   "bin": {
     "create-eleventy-blog": "./cli/_cli.js",
-    "crb": "./cli/_cli.js"
+    "ceb": "./cli/_cli.js"
   },
   "repository": {
     "type": "git",
@@ -29,7 +29,7 @@
     "lint-staged": "npx lint-staged"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy": "^0.12.1",
     "chalk": "^4.1.0",
     "clean-css": "^4.2.3",
     "commander": "^6.2.1",
