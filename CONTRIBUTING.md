@@ -61,28 +61,38 @@
 ### Configuration Options
 
 ```yml
-title: VT Covid Bot Docs
-baseurl: "/covid-bot" # the subpath of your site, e.g. /blog
-url: "https://vermontdepartmentofhealth.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-remote_theme: VermontDepartmentOfHealth/cayman
-exclude: ["*.*"]
-include: ["*.md", "*.liquid"]
+title: My Blog
+description: Low Code Eleventy Blog Builder
+
+themeColor: "#562bbd"
+accentColor: "#f4177f"
+
+repo: https://github.com/KyleMit/create-eleventy-blog-demo
+url: https://create-eleventy-blog-demo.netlify.app/ # the base hostname & protocol for your site
+baseUrl: "" # the subpath of your site, e.g. /blog
+
+taglist:
+- name: workforce
+  description: For posts about workforce development, onboarding, hiring, training, and managing professional talent
+- name: overview
+  description: An overview of products
+
+# ? remote_theme: VermontDepartmentOfHealth/cayman
+# ? exclude: ["*.txt"]
+# ? include: ["*.md", "*.liquid"]
 ```
 
-* navbar order
-* bio
-* taglist
-* add themes
 
-Add JSON Schema Validator
+* Todo
+  * [ ] Add JSON Schema Validator
+  * [ ] navbar order
+  * [ ] bio
+  * [ ] taglist
+  * [ ] add rich themes
 
 ## Features
 
 ### CLI
-
-* Add Front Matter (based on type)
-* Add Eject Option (react cli does this)
-* All folders optional
 
 ```bash
 npx create-eleventy-blog             # default command -> build or help?
@@ -104,17 +114,25 @@ npx create-eleventy-blog interactive # walk through of command options
   * has config -> build
   * no config -> new
 
+* Todo
+  * [ ] Add Front Matter (based on type)
+  * [ ] Add Eject Option (react cli does this)
+  * [ ] All folders optional
+
+
 ### Linting
 
-* Dead links
-* External images
-* No Alt Tags
+* Todo
+  * [ ] Dead links
+  * [ ] External images
+  * [ ] No Alt Tags
 
 ### VS Code Extension
 
-* Need VS Code Extension or NPM CLI
-* Extension can help with intellisense
-  * Frontmatter Snippets
+* Todo
+  * [ ] Need VS Code Extension or NPM CLI
+    * Extension can help with intellisense
+  * [ ] Frontmatter Snippets
 
 ### Error Handling
 

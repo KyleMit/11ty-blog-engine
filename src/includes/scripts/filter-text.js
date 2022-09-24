@@ -44,7 +44,7 @@ function performMark() {
 keywordInput.addEventListener("input", performMark)
 
 // on mobile, make room for the keyboard
-keywordInput.addEventListener("focus", function (e) {
+keywordInput.addEventListener("focus", function (_e) {
   // 'ontouchstart' in document.documentElement
   if (window.innerWidth < 900) {
     document.getElementById("form-filter").scrollIntoView(true)

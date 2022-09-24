@@ -2,7 +2,6 @@
 
 const path = require("path")
 const { promises: fs } = require("fs")
-const { description } = require("commander")
 const utils = require("./utils")
 const generateFavicon = require("../utils/generate-favicon")
 const { ALL_TYPES, FILES } = require("../utils/consts")

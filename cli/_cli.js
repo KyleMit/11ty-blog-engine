@@ -10,7 +10,7 @@ main()
 
 async function main() {
   // list all commands
-  program.description("default command - either run build or create project").action(async (cmd) => {
+  program.description("default command - either run build or create project").action(async (_cmd) => {
     // check for user config
     if (utils.checkConfigExists()) {
       // if exists, run build
@@ -76,10 +76,10 @@ async function main() {
   program
     .command("debug")
     .description("setup workspace to debug cli")
-    .action(async (cmd) => {
+    .action(async (_cmd) => {
       await cli.debug()
     })
 
-  /* global options and start */
+  // global options and start
   await program.name("create-eleventy-blog").version(version).parseAsync(process.argv)
 }

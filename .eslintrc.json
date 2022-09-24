@@ -1,0 +1,17 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 2020
+    },
+
+    "env": {
+        "browser": true,
+        "node": true,
+        "es2020": true
+    },
+    "rules": {
+        "no-unused-vars": ["error",  {
+             "varsIgnorePattern": "^_",
+             "argsIgnorePattern": "^_"
+        }]
+    }
+}

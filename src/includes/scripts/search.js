@@ -1,4 +1,4 @@
-;(function (window, document, undefined) {
+;(function (window, document) {
   "use strict"
 
   //
@@ -50,7 +50,7 @@
     var prev_counter = 0
     var prev_words = 2
     var prev_index = startPos
-    for (var i = startPos - 1; i > 0; i--) {
+    for (let i = startPos - 1; i > 0; i--) {
       if (text[i] === " ") {
         //word
         // increment prev_counter
@@ -66,7 +66,7 @@
     var next_counter = 0
     var next_words = 8
     var next_index = startPos
-    for (var i = startPos - 1; i < text.length - 1; i++) {
+    for (let i = startPos - 1; i < text.length - 1; i++) {
       if (text[i] === " ") {
         //word
         // increment prev_counter
@@ -215,7 +215,7 @@
     search(input.value)
   }
 
-  var inputChangeHandler = function (event) {
+  var inputChangeHandler = function (_event) {
     search(input.value)
   }
 
@@ -254,7 +254,7 @@
         })
 
         // on mobile, make room for the keyboard
-        input.addEventListener("focus", function (e) {
+        input.addEventListener("focus", function (_e) {
           // 'ontouchstart' in document.documentElement
           if (window.innerWidth < 900) {
             form.scrollIntoView(true)
