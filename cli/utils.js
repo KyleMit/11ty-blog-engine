@@ -4,11 +4,10 @@ const path = require("path")
 const cp = require("child_process")
 const yaml = require("js-yaml")
 const yamlFront = require("yaml-front-matter")
-
-const { FILES, FOLDERS, CONTENT_TYPES } = require("../utils/consts")
-
 const exec = promisify(cp.exec)
 const fs = fsRoot.promises
+
+const { FILES, FOLDERS, CONTENT_TYPES } = require("../utils/consts")
 
 const directories = getDirectories()
 const paths = getPaths()
@@ -151,7 +150,7 @@ async function copyDir(src, dest) {
 async function removeDir(...paths) {
   await Promise.all(
     paths.map(async (p) => {
-      await fs.rmdir(p, { recursive: true })
+      await fs.rm(p, { recursive: true, force: true })
     })
   )
 }
