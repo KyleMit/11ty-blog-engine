@@ -255,7 +255,7 @@ npm i -g .
 npm link
 ```
 
-From client project
+From content project
 
 ```bash
 npm i create-eleventy-blog -D

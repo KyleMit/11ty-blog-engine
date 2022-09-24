@@ -215,7 +215,13 @@ async function readYamlDir(src, arr) {
 }
 
 async function readYamlFile(src, arr) {
-  let text = await fs.readFile(src, "utf8")
-  let data = yamlFront.loadFront(text)
-  arr.push(data)
+  try {
+    let text = await fs.readFile(src, "utf8")
+    let data = yamlFront.loadFront(text)
+    arr.push(data)
+  } catch (error) {
+    const fileName = path.basename(src)
+    throw new Error(`Error parsing yaml frontmatter on file '${fileName}':\n${src}\n\n${error.message}`)
+  }
+
 }

@@ -53,7 +53,7 @@ async function main(options) {
     // remove tags that don't exist
     let usedTags = userTaglist.filter((t) => actualTagList.includes(t.name))
 
-    // add empty tags that do
+    // add empty tags that do exist
     let usedTagNames = usedTags.map((t) => t.name)
     let missingTagNames = actualTagList.filter((t) => !usedTagNames.includes(t))
     let missingTags = missingTagNames.map((t) => ({
@@ -72,24 +72,52 @@ async function main(options) {
     await generateFavicon(metaConfig)
 
     // exit early
-    if (options.preCompile) {
-      return
-    }
+    if (options.preCompile) { return }
 
     // change working directory, run 11ty, change back
-    process.chdir(paths.engineDir)
-    await utils.cmd(`npx @11ty/eleventy`)
-    process.chdir(paths.contentDir)
+    try {
+      process.chdir(paths.engineDir)
+      await utils.cmd(`npx @11ty/eleventy`)
+    } catch (error) {
+      throw new Error(`Error building 'npx @11ty/eleventy'.
+      Try precompiling the output and then running eleventy to debug the failure:
+
+      npx create-eleventy-blog build --pre-compile
+      cd ${paths.engineDir}
+      npx @11ty/eleventy
+      `)
+    }
+
 
     // move _site from engine to content
     await utils.copyDir(paths.engineSitePath, paths.contentSitePath)
 
-    // cleanup local temp & site
-    await utils.removeDir(paths.engineSrcPath)
-    await fs.rename(paths.engineTempPath, paths.engineSrcPath)
   } catch (err) {
     console.log({ err })
+
+  } finally {
+    // change back to content dir
+    process.chdir(paths.contentDir)
+
+    // cleanup local temp & site
+    await cleanupTempBuild(options)
   }
+
+}
+
+async function cleanupTempBuild(options) {
+  // don't cleanup if we set to pre-compile
+  if (options.preCompile) { return }
+
+  try {
+    if (utils.checkFileExists(paths.engineTempPath)) {
+      await utils.removeDir(paths.engineSrcPath)
+      await fs.rename(paths.engineTempPath, paths.engineSrcPath)
+    }
+  } catch (err) {
+    console.log({ msg: "Error during cleanup", err })
+  }
+
 }
 
 async function writeJson(filePath, obj) {
