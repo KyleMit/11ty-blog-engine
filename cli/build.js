@@ -79,13 +79,16 @@ async function main(options) {
       process.chdir(paths.engineDir)
       await utils.cmd(`npx @11ty/eleventy`)
     } catch (error) {
-      throw new Error(`Error building 'npx @11ty/eleventy'.
-      Try precompiling the output and then running eleventy to debug the failure:
+      throw new Error(`
+Error building 'npx @11ty/eleventy'.
 
-      npx create-eleventy-blog build --pre-compile
-      cd ${paths.engineDir}
-      npx @11ty/eleventy
-      `)
+Try precompiling the output and then running eleventy to debug the failure:
+
+    npx create-eleventy-blog build --pre-compile
+    cd ${paths.engineDir}
+    npx @11ty/eleventy
+
+${error}`)
     }
 
 
@@ -93,7 +96,7 @@ async function main(options) {
     await utils.copyDir(paths.engineSitePath, paths.contentSitePath)
 
   } catch (err) {
-    console.log({ err })
+    console.log(err)
 
   } finally {
     // change back to content dir
